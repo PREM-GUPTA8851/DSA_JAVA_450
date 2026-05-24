@@ -568,7 +568,6 @@ class Solution {
     }
 }
 
-
 /* Main class */
 public class Main {
         public static void main(String[] args) {
@@ -582,7 +581,7 @@ public class Main {
         // Creating loop manually
         head.next.next.next.next = head.next;
 
- Solution obj = new Solution();
+        Solution obj = new Solution();
 
         boolean ans = obj.detectLoop(head);
 
@@ -594,4 +593,3 @@ public class Main {
         }
     }
 }
-
