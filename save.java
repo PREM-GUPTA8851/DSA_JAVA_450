@@ -831,8 +831,183 @@
 // }
 
 
+// =========================(Matrix)========================
+// import java.util.*;
+// 45 ). Search in a 2D Matrix
+// class Solution {
 
-// // // // ==========================================(Linked_list)=================================
+//     public boolean searchMatrix(int[][] matrix, int target) {
+
+//         /*
+//         We treat the 2D matrix as a sorted 1D array
+//         and apply Binary Search.
+//         */
+
+//         int m = matrix.length;       // rows
+//         int n = matrix[0].length;   // columns
+
+//         int start = 0;
+//         int end = m * n - 1;
+
+//         while (start <= end) {
+
+//             int mid = start + (end - start) / 2;
+
+//             // Convert 1D index into 2D index
+//             int row = mid / n;
+//             int col = mid % n;
+
+//             // Element mil gaya
+//             if (matrix[row][col] == target) {
+//                 return true;
+//             }
+
+//             // Right side search
+//             else if (matrix[row][col] < target) {
+//                 start = mid + 1;
+//             }
+
+//             // Left side search
+//             else {
+//                 end = mid - 1;
+//             }
+//         }
+
+//         return false;
+//     }
+// }
+
+// public class Main {
+
+//     public static void main(String[] args) {
+
+//         Solution obj = new Solution();
+
+//         int matrix[][] = {
+//             {1, 3, 5, 7},
+//             {10, 11, 16, 20},
+//             {23, 30, 34, 60}
+//         };
+
+//         int target = 3;
+//         boolean ans = obj.searchMatrix(matrix, target);
+//         System.out.println("Target Found = " + ans);
+//     }
+// }
+
+
+/*
+// 51. Rotate Matrix by 90 degree anti-clockwise
+class Solution {
+
+    public void rotateMatrix(int[][] mat) {
+
+       
+
+        int row = mat.length;
+        int col = mat[0].length;
+
+        int[][] str = new int[row][col];
+
+        // Reverse each row
+        for (int i = 0; i < row; i++) {
+
+            for (int j = 0; j < col; j++) {
+
+                str[i][j] = mat[i][col - j - 1];
+            }
+        }
+
+        // Transpose
+        for (int i = 0; i < row; i++) {
+
+            for (int j = 0; j < col; j++) {
+
+                mat[i][j] = str[j][i];
+            }
+        }
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Solution obj = new Solution();
+
+        int[][] mat = {
+            {0, 1, 2},
+            {3, 4, 5},
+            {6, 7, 8}
+        };
+
+        obj.rotateMatrix(mat);
+
+        // Output print
+        System.out.println("Rotated Matrix:");
+
+        for (int i = 0; i < mat.length; i++) {
+
+            for (int j = 0; j < mat[0].length; j++) {
+
+                System.out.print(mat[i][j] + " ");
+            }
+
+            System.out.println();
+        }
+    }
+}
+*/
+// ==================(String's) =================
+
+/*
+// 56).Reverse a String 
+import java.util.*;
+
+class Solution {
+
+    public void reverseString(char[] s) {
+
+        int i = 0;
+        int j = s.length - 1;
+
+        // Two pointer approach
+        while (i < j) {
+
+            // Swap characters
+            char c = s[i];
+            s[i] = s[j];
+            s[j] = c;
+
+            i++;
+            j--;
+        }
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Solution obj = new Solution();
+
+        char[] s = {'h', 'e', 'l', 'l', 'o'};
+
+        obj.reverseString(s);
+
+        // Output print
+        System.out.print("Reversed String = ");
+
+        for (char ch : s) {
+            System.out.print(ch);
+        }
+    }
+}
+*/
+
+
+
+// // // // =====================(Linked_list)======================
 
 // // // /*
 // // // class Node {
@@ -868,20 +1043,13 @@
 // // //         Node fast = head;
 
 // // //         while(fast != null && fast.next != null) {
-
-// // //             // slow moves 1 step
 // // //             slow = slow.next;
-
-// // //             // fast moves 2 steps
 // // //             fast = fast.next.next;
-
 // // //             // if both meet -> loop exists
 // // //             if(slow == fast) {
 // // //                 return true;
 // // //             }
 // // //         }
-
-// // //         // no loop found
 // // //         return false;
 // // //     }
 // // // }
