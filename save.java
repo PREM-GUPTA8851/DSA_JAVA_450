@@ -1,4 +1,5 @@
 
+// // // // //     public static void reverseArray(int[] arr){
 // // // // //         // reverse krna h ab two pointer method k use krke krte h ab
 // // // // //         int i = 0, j = arr.length -1 ;
 // // // // //         while(i <= j){
