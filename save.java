@@ -1,4 +1,7 @@
 
+// // // // //         // reverse krna h ab two pointer method k use krke krte h ab
+// // // // //         int i = 0, j = arr.length -1 ;
+// // // // //         while(i <= j){
 // // // // //             int temp = arr[i];
 // // // // //             arr[i] = arr[j];
 // // // // //             arr[j] = temp;
