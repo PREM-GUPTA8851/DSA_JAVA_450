@@ -1044,7 +1044,6 @@ public class Main {
 
 
 
-
 // // // // =====================(Linked_list)======================
 
 // // // /*
@@ -1071,7 +1070,6 @@ public class Main {
 // // //     }
 // // // }
 
-
 // // // /* Solution class */
 // // // class Solution {
 
@@ -1093,8 +1091,6 @@ public class Main {
 // // //     }
 // // // }
 
-
-
 // // // /* Main class */
 // // // public class Main {
 // // //         public static void main(String[] args) {
@@ -1110,11 +1106,12 @@ public class Main {
 
 // // //         Solution obj = new Solution();
 
-// // //         boolean ans = obj.detectLoop(head);
-
+// //        boolean ans = obj.detectLoop(head);
 // // //         if(ans) {
 // // //             System.out.println("Loop Detected");
 // // //         }
-
 // // //         else {
-// // //    
+// // //             System.out.println("No Loop");
+// // //         }
+// // //     }
+// // // }
