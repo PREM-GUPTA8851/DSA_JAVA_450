@@ -1,24 +1,23 @@
 
-import java.util.Arrays;
-
-class save{
-    public static void reverseArray(int[] arr){
-        // reverse krna h ab two pointer method k use krke krte h ab
-        int i = 0, j = arr.length -1 ;
-        while(i <= j){
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
-            i++; 
-            j--;
+            }else{
+                ans.get(ans.size()-1)[1]=Math.max(ans.get(ans.size()-1)[1],it[1]);
+            }
         }
+
+        return ans.toArray(new int[ans.size()][]);
     }
-    public static void main(String[] args){
-        int[] arr = { 1, 4, 3, 2, 6, 5};
 
-        reverseArray(arr);
-        for(int i = 0; i < arr.length; i++){
-            System.out.printf(arr[i] + " ");
+    public static void main(String[] args) {
+        int[][] intervals={{1,3},{2,6},{8,10},{15,18}};
+
+        Solution obj=new Solution();
+        int[][] ans=obj.merge(intervals);
+
+        System.out.print("[");
+        for(int i=0;i<ans.length;i++){
+            System.out.print(Arrays.toString(ans[i]));
+            if(i<ans.length-1) System.out.print(", ");
         }
+        System.out.println("]");
     }
 }
