@@ -1,5 +1,5 @@
-
-// // // // // ------------(450) ---------
+// // // // ////// DSA with jav
+// // // // // -------------(450) ---------a- 
 
 // // // // // ================================(Array)===========================
 // // // // // Reverse the Array 
@@ -302,6 +302,43 @@
 
 // // // // // agar count 1 se bda h to 
 // // // // */
+
+// 14. Merge Intervals 
+/*
+import java.util.*;
+
+class Solution {
+    public int[][] merge(int[][] intervals) {
+        Arrays.sort(intervals,(a,b)->a[0]-b[0]);
+
+        List<int[]> ans=new ArrayList<>();
+
+        for(int[] it:intervals){
+            if(ans.isEmpty() || ans.get(ans.size()-1)[1]<it[0]){
+                ans.add(it);
+            }else{
+                ans.get(ans.size()-1)[1]=Math.max(ans.get(ans.size()-1)[1],it[1]);
+            }
+        }
+
+        return ans.toArray(new int[ans.size()][]);
+    }
+
+    public static void main(String[] args) {
+        int[][] intervals={{1,3},{2,6},{8,10},{15,18}};
+
+        Solution obj=new Solution();
+        int[][] ans=obj.merge(intervals);
+
+        System.out.print("[");
+        for(int i=0;i<ans.length;i++){
+            System.out.print(Arrays.toString(ans[i]));
+            if(i<ans.length-1) System.out.print(", ");
+        }
+        System.out.println("]");
+    }
+}
+*/
 
 // // // // // 18. --find all pairs on integer array whose sum is equal to given number
 // // // // import java.util.*;
@@ -1004,78 +1041,3 @@ public class Main {
     }
 }
 */
-
-
-
-// // // // =====================(Linked_list)======================
-
-// // // /*
-// // // class Node {
-// // //     int data;
-// // //     Node next;
-
-// // //     Node(int x) {
-// // //         data = x;
-// // //         next = null;
-// // //     }
-// // // }
-// // // */
-// // // import java.util.*;
-
-// // // /* Node class */
-// // // class Node {
-// // //     int data;
-// // //     Node next;
-
-// // //     Node(int x) {
-// // //         data = x;
-// // //         next = null;
-// // //     }
-// // // }
-
-// // // /* Solution class */
-// // // class Solution {
-
-// // //     public boolean detectLoop(Node head) {
-
-// // //         // take two temp nodes
-// // //         Node slow = head;
-// // //         Node fast = head;
-
-// // //         while(fast != null && fast.next != null) {
-// // //             slow = slow.next;
-// // //             fast = fast.next.next;
-// // //             // if both meet -> loop exists
-// // //             if(slow == fast) {
-// // //                 return true;
-// // //             }
-// // //         }
-// // //         return false;
-// // //     }
-// // // }
-
-// // // /* Main class */
-// // // public class Main {
-// // //         public static void main(String[] args) {
-
-// // //         // Creating linked list
-// // //         Node head = new Node(1);
-// // //         head.next = new Node(2);
-// // //         head.next.next = new Node(3);
-// // //         head.next.next.next = new Node(4);
-
-// // //         // Creating loop manually
-// // //         head.next.next.next.next = head.next;
-
-// // //         Solution obj = new Solution();
-
-// // //         boolean ans = obj.detectLoop(head);
-
-// // //         if(ans) {
-// // //             System.out.println("Loop Detected");
-// // //         }
-// // //         else {
-// // //             System.out.println("No Loop");
-// // //         }
-// // //     }
-// // // }
