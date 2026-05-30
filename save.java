@@ -1070,3 +1070,25 @@ public class Main {
 // // //         next = null;
 // // //     }
 // // // }
+
+
+// // // /* Solution class */
+// // // class Solution {
+
+// // //     public boolean detectLoop(Node head) {
+
+// // //         // take two temp nodes
+// // //         Node slow = head;
+// // //         Node fast = head;
+
+// // //         while(fast != null && fast.next != null) {
+// // //             slow = slow.next;
+// // //             fast = fast.next.next;
+// // //             // if both meet -> loop exists
+// // //             if(slow == fast) {
+// // //                 return true;
+// // //             }
+// // //         }
+// // //         return false;
+// // //     }
+// // // }
