@@ -1041,3 +1041,32 @@ public class Main {
     }
 }
 */
+
+
+
+
+// // // // =====================(Linked_list)======================
+
+// // // /*
+// // // class Node {
+// // //     int data;
+// // //     Node next;
+
+// // //     Node(int x) {
+// // //         data = x;
+// // //         next = null;
+// // //     }
+// // // }
+// // // */
+// // // import java.util.*;
+
+// // // /* Node class */
+// // // class Node {
+// // //     int data;
+// // //     Node next;
+
+// // //     Node(int x) {
+// // //         data = x;
+// // //         next = null;
+// // //     }
+// // // }
