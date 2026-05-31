@@ -31,3 +31,8 @@ class Solution {
         System.out.println("]");
     }
 }
+
+class Solution {
+    public int search(int[] nums, int target) {
+     
+}
