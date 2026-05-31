@@ -31,15 +31,15 @@ class Solution {
         System.out.println("]");
     }
 }
-
 class Solution {
     public int search(int[] nums, int target) {
         int low=0,high=nums.length-1;
+
         
+            }else{
                 if(target>nums[mid] && target<=nums[high])
                     low=mid+1;
                 else
-
                     high=mid-1;
             }
         }
