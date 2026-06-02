@@ -26,3 +26,10 @@ Explanation: The first element 4 moves to last position, the second element 5 mo
 //     }
 //     public static void main(String[] args){
 //         int[] arr = { 1, 4, 3, 2, 6, 5};
+
+//         reverseArray(arr);
+//         for(int i = 0; i < arr.length; i++){
+//             System.out.printf(arr[i] + " ");
+//         }
+//     }
+// }
