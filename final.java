@@ -56,4 +56,7 @@ Output: [1, 9]
 //         for (int num : arr) {
 //             if (num < mini) mini = num;
 //             if (num > maxi) maxi = num;
-//    
+//         }
+        
+//         ArrayList<Integer> result = new ArrayList<>();
+//      
