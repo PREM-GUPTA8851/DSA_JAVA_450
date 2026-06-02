@@ -33,3 +33,20 @@ Explanation: The first element 4 moves to last position, the second element 5 mo
 //         }
 //     }
 // }
+
+//Find the max and min element in an array
+/*
+Input: arr[] = [3, 5, 4, 1, 9]
+Output: [1, 9]
+// Explanation: The minimum element is 1, and the maximum element is 9.
+
+// Input: arr[] = [22, 14, 8, 17, 35, 3]
+// Output: [3, 35] 
+// Explanation: The minimum element is 3, and the maximum element is 35.
+// // */
+
+// // import java.util.ArrayList;
+
+// class GfG {
+//     public static ArrayList<Integer> findMinMax(int[] arr) {
+//  
