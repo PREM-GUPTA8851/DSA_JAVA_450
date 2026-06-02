@@ -49,4 +49,6 @@ Output: [1, 9]
 
 // class GfG {
 //     public static ArrayList<Integer> findMinMax(int[] arr) {
-//  
+//         int mini = Integer.MAX_VALUE;
+//         int maxi = Integer.MIN_VALUE;
+      
