@@ -60,4 +60,7 @@ Output: [1, 9]
         
 //         ArrayList<Integer> result = new ArrayList<>();
 //         result.add(mini);
-//     
+//         result.add(maxi);
+//         return result;
+
+
