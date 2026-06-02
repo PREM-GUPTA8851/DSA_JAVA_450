@@ -51,4 +51,9 @@ Output: [1, 9]
 //     public static ArrayList<Integer> findMinMax(int[] arr) {
 //         int mini = Integer.MAX_VALUE;
 //         int maxi = Integer.MIN_VALUE;
-      
+        
+//         // Find minimum and maximum
+//         for (int num : arr) {
+//             if (num < mini) mini = num;
+//             if (num > maxi) maxi = num;
+//    
