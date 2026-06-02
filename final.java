@@ -18,3 +18,6 @@ Explanation: The first element 4 moves to last position, the second element 5 mo
 //         int i = 0, j = arr.length -1 ;
 //         while(i <= j){
 //             int temp = arr[i];
+//             arr[i] = arr[j];
+//             arr[j] = temp;
+//             i++; 
