@@ -68,6 +68,9 @@ Output: [1, 9]
 //         int[] arr = {3, 5, 4, 1, 9};
 //         ArrayList<Integer> result = findMinMax(arr);
 
+//         System.out.println(result.get(0) + " " + result.get(1));
+//           }
+// }
 
 
 
