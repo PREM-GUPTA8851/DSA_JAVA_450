@@ -65,8 +65,4 @@ Output: [1, 9]
 // }
 
 //     public static void main(String[] args) {
-
-
-
-
-
+//         int[] arr = {3, 5, 4, 1, 9};
