@@ -21,3 +21,8 @@ Explanation: The first element 4 moves to last position, the second element 5 mo
 //             arr[i] = arr[j];
 //             arr[j] = temp;
 //             i++; 
+//             j--;
+//         }
+//     }
+//     public static void main(String[] args){
+//         int[] arr = { 1, 4, 3, 2, 6, 5};
