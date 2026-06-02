@@ -16,3 +16,5 @@ Explanation: The first element 4 moves to last position, the second element 5 mo
 //     public static void reverseArray(int[] arr){
 //         // reverse krna h ab two pointer method k use krke krte h ab
 //         int i = 0, j = arr.length -1 ;
+//         while(i <= j){
+//             int temp = arr[i];
