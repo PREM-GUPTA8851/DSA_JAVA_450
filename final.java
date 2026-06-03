@@ -77,4 +77,8 @@ class Solution {
     public int longestConsecutive(int[] arr) {
         Arrays.sort(arr);
         // 1 2 3 4 5 6 9
-        
+        int count = 1;
+        int maxi = 1;
+      
+
+
