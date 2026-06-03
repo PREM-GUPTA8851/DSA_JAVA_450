@@ -28,7 +28,10 @@ class GfG {
         result.add(mini);
         result.add(maxi);
         return result;
-       
+           
+}
+
+
 // // // // // import java.util.Arrays;
 
 // // // // // class save{
