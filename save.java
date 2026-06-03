@@ -22,8 +22,10 @@ class GfG {
         for (int num : arr) {
             if (num < mini) mini = num;
             if (num > maxi) maxi = num;
-      
-
+        }
+        
+        ArrayList<Integer> result = new ArrayList<>();
+   
 // // // // // import java.util.Arrays;
 
 // // // // // class save{
