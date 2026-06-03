@@ -81,6 +81,7 @@ class Solution {
         int maxi = 1;
 
         for(int i = 0; i < arr.length - 1; i++) {
-     
+            // if duplicates skip them --> 
+           
 
 
