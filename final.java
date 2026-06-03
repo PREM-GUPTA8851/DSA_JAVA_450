@@ -92,7 +92,16 @@ class Solution {
             // i --> 2 -->3 + 1 = 4 c --> 4
             // i --> 3 -->4 + 1 = 5 c --> 5
             // i --> 4 -->5 + 1 = 6 c --> 6
-            else
+            else       count = 1;
+
+            maxi = Math.max(maxi, count);
+        }
+
+        return maxi;
+    }
+}
+
+
          
 
 
