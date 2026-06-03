@@ -25,7 +25,8 @@ class GfG {
         }
         
         ArrayList<Integer> result = new ArrayList<>();
-   
+        result.add(mini);
+       
 // // // // // import java.util.Arrays;
 
 // // // // // class save{
