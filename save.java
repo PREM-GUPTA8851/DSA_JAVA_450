@@ -27,7 +27,7 @@ class GfG {
         ArrayList<Integer> result = new ArrayList<>();
         result.add(mini);
         result.add(maxi);
-
+        return result;
        
 // // // // // import java.util.Arrays;
 
