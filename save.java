@@ -21,6 +21,7 @@ class GfG {
         // Find minimum and maximum
         for (int num : arr) {
             if (num < mini) mini = num;
+            if (num > maxi) maxi = num;
       
 
 // // // // // import java.util.Arrays;
