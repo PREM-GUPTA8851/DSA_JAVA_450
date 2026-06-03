@@ -16,8 +16,7 @@
 class GfG {
     public static ArrayList<Integer> findMinMax(int[] arr) {
         int mini = Integer.MAX_VALUE;
-
-
+  
 // // // // // import java.util.Arrays;
 
 // // // // // class save{
