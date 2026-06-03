@@ -71,3 +71,10 @@ Output: [1, 9]
 //         System.out.println(result.get(0) + " " + result.get(1));
 //           }
 // }
+
+// 
+class Solution {
+    public int longestConsecutive(int[] arr) {
+        Arrays.sort(arr);
+        // 1 2 3 4 5 6 9
+        
