@@ -82,4 +82,8 @@ class Solution {
 
         for(int i = 0; i < arr.length - 1; i++) {
             // if duplicates skip them --> 
-      
+            if(arr[i] == arr[i + 1])
+                continue;
+
+
+
