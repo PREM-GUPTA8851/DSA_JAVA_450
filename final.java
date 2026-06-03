@@ -79,6 +79,8 @@ class Solution {
         // 1 2 3 4 5 6 9
         int count = 1;
         int maxi = 1;
-      
+
+        for(int i = 0; i < arr.length - 1; i++) {
+     
 
 
