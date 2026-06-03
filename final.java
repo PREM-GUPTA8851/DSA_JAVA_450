@@ -84,6 +84,6 @@ class Solution {
             // if duplicates skip them --> 
             if(arr[i] == arr[i + 1])
                 continue;
-
-
-
+        
+            if(arr[i] + 1 == arr[i + 1])
+           
