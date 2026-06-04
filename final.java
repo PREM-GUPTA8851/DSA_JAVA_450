@@ -1,5 +1,5 @@
 // // // // // ================================(Array)===========================
-// Reverse the Array 
+// 1.Reverse the Array 
 /*
 Input: arr[] = [1, 4, 3, 2, 6, 5]  
 Output:  [5, 6, 2, 3, 4, 1]
@@ -72,7 +72,7 @@ Output: [1, 9]
 //           }
 // }
 
-// 
+// Find the longest consecutive sequence in an array
 class Solution {
     public int longestConsecutive(int[] arr) {
         Arrays.sort(arr);
@@ -100,7 +100,8 @@ class Solution {
     }
 }
 
-
-         
-
-
+// 40,41 Median of an Array
+class Solution {
+    public double findMedian(int[] arr) {
+        Arrays.sort(arr);
+      
