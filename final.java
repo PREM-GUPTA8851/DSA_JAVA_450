@@ -104,4 +104,10 @@ class Solution {
 class Solution {
     public double findMedian(int[] arr) {
         Arrays.sort(arr);
-      
+        int size = arr.length; 
+        // 
+        if(size % 2 == 0){
+            int first = size / 2;
+            int second = (size /2) - 1;
+
+
