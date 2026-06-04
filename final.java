@@ -109,5 +109,8 @@ class Solution {
         if(size % 2 == 0){
             int first = size / 2;
             int second = (size /2) - 1;
-
-
+            return (arr[first]+ arr[second])/(double)2;
+        }
+        else {
+        // pehle sort --> then size check if odd hua to
+      
