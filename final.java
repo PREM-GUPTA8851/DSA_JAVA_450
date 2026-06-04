@@ -113,4 +113,10 @@ class Solution {
         }
         else {
         // pehle sort --> then size check if odd hua to
-      
+        // size/2 wala element access krna 
+        return arr[size/2];
+        }
+    }
+}
+
+
