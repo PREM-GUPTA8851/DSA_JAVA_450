@@ -1,5 +1,5 @@
 
-
+        List<int[]> ans=new ArrayList<>();
         for(int[] it:intervals){
             if(ans.isEmpty() || ans.get(ans.size()-1)[1]<it[0]){
                 ans.add(it);
