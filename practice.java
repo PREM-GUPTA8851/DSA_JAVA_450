@@ -1,4 +1,11 @@
 
+
+        for(int[] it:intervals){
+            if(ans.isEmpty() || ans.get(ans.size()-1)[1]<it[0]){
+                ans.add(it);
+            }else{
+                ans.get(ans.size()-1)[1]=Math.max(ans.get(ans.size()-1)[1],it[1]);
+            }
         }
 
         return ans.toArray(new int[ans.size()][]);
