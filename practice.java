@@ -1,4 +1,6 @@
 
+        Arrays.sort(intervals,(a,b)->a[0]-b[0]);
+
         List<int[]> ans=new ArrayList<>();
         for(int[] it:intervals){
             if(ans.isEmpty() || ans.get(ans.size()-1)[1]<it[0]){
