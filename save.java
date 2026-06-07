@@ -15,6 +15,10 @@
 
 
 
+            temp = temp.next;
+
+            if(node.next != null) {
+
                 pq.offer(node.next);
             }
         }
