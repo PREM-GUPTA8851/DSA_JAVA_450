@@ -13,7 +13,9 @@
 // // // // Explanation: The first element 4 moves to last position, the second element 5 moves to second last and so on.
 // // // // */
 
-
+        for(ListNode node : lists) {
+            if(node != null) pq.offer(node);
+        }
         ListNode dummy = new ListNode(0);
         ListNode temp = dummy;
         while(!pq.isEmpty()) {
