@@ -13,6 +13,12 @@
 // // // // Explanation: The first element 4 moves to last position, the second element 5 moves to second last and so on.
 // // // // */
 
+
+
+
+        return dummy.next;
+    }
+}
 class GfG {
     public static ArrayList<Integer> findMinMax(int[] arr) {
         int mini = Integer.MAX_VALUE;
