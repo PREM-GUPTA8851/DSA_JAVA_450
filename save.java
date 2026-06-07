@@ -14,6 +14,9 @@
 // // // // */
 
 
+        while(!pq.isEmpty()) {
+            ListNode node = pq.poll();
+
             temp.next = node;
 
             temp = temp.next;
