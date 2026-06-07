@@ -15,7 +15,9 @@
 
 
 
-
+                pq.offer(node.next);
+            }
+        }
         return dummy.next;
     }
 }
