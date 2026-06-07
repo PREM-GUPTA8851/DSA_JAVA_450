@@ -13,6 +13,11 @@
 // // // // Explanation: The first element 4 moves to last position, the second element 5 moves to second last and so on.
 // // // // */
 
+
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+        PriorityQueue<ListNode> pq = new PriorityQueue<>((a,b) -> a.val - b.val);
+
         for(ListNode node : lists) {
             if(node != null) pq.offer(node);
         }
