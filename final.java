@@ -34,7 +34,7 @@ Explanation: The first element 4 moves to last position, the second element 5 mo
 //     }
 // }
 
-//Find the max and min element in an array
+//2.Find the max and min element in an array
 /*
 Input: arr[] = [3, 5, 4, 1, 9]
 Output: [1, 9]
@@ -71,6 +71,15 @@ Output: [1, 9]
 //         System.out.println(result.get(0) + " " + result.get(1));
 //           }
 // }
+
+// 3.Kth Smallest
+class Solution {
+    public int kthSmallest(int[] arr, int k) {
+        Arrays.sort(arr);
+        return arr[k - 1];
+    }
+}
+
 
 // Find the longest consecutive sequence in an array
 class Solution {
@@ -119,4 +128,6 @@ class Solution {
     }
 }
 
+/*  
 
+*/
