@@ -109,7 +109,7 @@ class Solution {
     }
 }
 
-// 40,41 Median of an Array
+// 40,41 last one Median of an Array
 class Solution {
     public double findMedian(int[] arr) {
         Arrays.sort(arr);
