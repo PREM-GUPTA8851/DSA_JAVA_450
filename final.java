@@ -81,7 +81,7 @@ class Solution {
 }
 
 
-// Find the longest consecutive sequence in an array
+// 24.Find the longest consecutive sequence in an array
 class Solution {
     public int longestConsecutive(int[] arr) {
         Arrays.sort(arr);
