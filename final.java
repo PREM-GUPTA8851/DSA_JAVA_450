@@ -141,6 +141,20 @@ class GfG {
         System.out.println();
     }
 }
+// 6. wap to find the union of two arrays
+class Solution {
+    public static ArrayList<Integer> findUnion(int[] a, int[] b) {
+         // so we used treeset in java it prevents duplicacy and always stored result's in sorted order 
+        TreeSet<Integer> set = new TreeSet<>();
+            // dono array se element nikalne h aur tree set m store krne h
+        for(int x: a) set.add(x);
+        for(int x: b) set.add(x);
+
+        return new ArrayList<Integer>(set);
+            
+    }
+}
+
 
 // 24.Find the longest consecutive sequence in an array
 class Solution {
