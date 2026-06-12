@@ -141,6 +141,7 @@ class GfG {
         System.out.println();
     }
 }
+
 // 6. wap to find the union of two arrays
 class Solution {
     public static ArrayList<Integer> findUnion(int[] a, int[] b) {
@@ -155,6 +156,30 @@ class Solution {
     }
 }
 
+// 7. Rotate Array by One
+class Solution {
+  public:
+    void rotate(vector<int> &arr) {
+        int length = arr.size();
+        // shift by 1 krna h 
+        //sbse pehle agar array k last element store krna 
+        // store = 5
+        int store = arr[length - 1];
+        // aur fhir 1 shift krna array k elements ko
+        // .. | 1 | 2 | 3 | 4|
+        for(int i = length - 1; i > 0; i--){
+            arr[i] = arr[i - 1];
+        }
+        // arr[4] = arr[3]
+        // arr[3] = arr[2]
+        // arr[2] = arr[1]
+        // arr[1] = arr[0]
+        arr[0] = store;
+        
+        // aur fhir last element ko 1st index p store krna 
+        //  5 | 1 | 2 | 3 | 4 |
+    }
+};
 
 // 24.Find the longest consecutive sequence in an array
 class Solution {
