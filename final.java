@@ -195,6 +195,49 @@ class Solution {
     }
 }
 
+// 11. FInd the duplicate Number
+class Solution {
+    public int findDuplicate(int[] nums) {
+        /*
+        method - 1--> 
+         */
+        // logic by sort--> then indexmapping where mapping breaks return index - 1
+        // Arrays.sort(nums);
+        // // 7, 9, 7, 4, 2,8, 7, 7, 1 5
+        // // 1, 2, 4, 5, 7,7,7,7, 8, 9
+        // int ans = -1;
+        // for(int index = 0; index < nums.length - 1; index++){
+        //     if(nums[index] == nums[index + 1]){
+        //          ans = nums[index];
+        //         break;
+        //     } 
+        // }
+        // return ans;
+
+
+        /*
+        method - 2 --> mark as -ve one 
+         */
+        // time complexity --> o(n)
+        // array k us element m jao aur mark as -ve mark kro
+        int ans = 0;
+        // 1,3,4,2,2
+        for(int i = 0; i < nums.length; i++){
+            if(nums[Math.abs(nums[i])] < 0){
+             ans = Math.abs(nums[i]);
+            break;
+            }
+            nums[Math.abs(nums[i])] *= -1;
+        // nums[nums[0]] -->nums[1] --> 3 --> 1, -3,4,2,2
+        // nums[nums[1]] --> nums[3] --> 2 --> 1, -3, 4, -2, 2
+        // nums[nums[2]] --> nums[4] --> 2 --> 1,-3, 4, -2, -2
+        // nums[nums[3]] --> nums[2] --> 1, -3, -4, -2, -2
+        // nums[nums[4]] --> nums[2] --> 
+        }
+        return ans;
+    }
+}
+
 // 24.Find the longest consecutive sequence in an array
 class Solution {
     public int longestConsecutive(int[] arr) {
