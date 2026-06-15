@@ -237,6 +237,40 @@ class Solution {
         return ans;
     }
 }
+// 12. Merge without extra spaces 
+// two arrays sorted given h aapan first array k last element se compare kre 
+// doosri array k first element se then swap kr de 
+// at last dono ko sort kr de
+int m = a.length;
+int n = b.length;
+
+int i = m - 1;
+int j = 0;
+int flag = 0;
+while(i >= 0 && j < n){
+        if(a[i] > b[j]){
+                // swap
+                int temp = a[i];
+                a[i] = b[j];
+                b[j] = temp;
+
+                // swap done
+                i--;
+                j++;
+                flag = 1;
+        }
+        else {
+                break;
+        }
+}
+
+if(flag == 1){
+        Arrays.sort(a):
+        Arrays.sort(b);
+}
+
+// 
+
 
 // 24.Find the longest consecutive sequence in an array
 class Solution {
