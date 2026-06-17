@@ -322,6 +322,77 @@ class Solution {
     }
 }
 
+// 15.Next permutations
+class Solution {
+    public void nextPermutation(int[] nums) {
+        int n = nums.length;
+
+        int pivot = -1;
+
+        for (int i = n - 2; i >= 0; i--) {
+            if (nums[i] < nums[i + 1]) {
+                pivot = i;
+                break;
+            }
+        }
+
+        if (pivot != -1) {
+            for (int i = n - 1; i > pivot; i--) {
+                if (nums[i] > nums[pivot]) {
+                    int temp = nums[i];
+                    nums[i] = nums[pivot];
+                    nums[pivot] = temp;
+                    break;
+                }
+            }
+        }
+
+        int left = pivot + 1;
+        int right = n - 1;
+
+        while (left < right) {
+            int temp = nums[left];
+            nums[left] = nums[right];
+            nums[right] = temp;
+
+            left++;
+            right--;
+        }
+    }
+}
+
+// dry runs
+// test case 
+/*
+1,2,3,6,5,4
+
+1,2,4,6,5,3
+1,2, 4, 3, 5, 6
+
+
+n = 6
+first loop 
+i = n - 2 = 6- 2 = 4 
+5 < 4 -->x
+6 < 5 -->x
+3 < 6 --> haa h
+pivot = 2
+
+// swap with pivot
+1,2,3,6,5,4
+pivot = 2
+last se start kiya agar num pivot se bda mila 
+to uske sath swap kr dena
+1,2,4,6,5,3
+
+// reverse after pivot + 1 , right 
+left = 3
+right = 5
+//after reverse till left < right
+
+1, 2, 4, 3, 5, 6
+
+ */
 
 // 24.Find the longest consecutive sequence in an array
 class Solution {
