@@ -269,6 +269,21 @@ if(flag == 1){
         Arrays.sort(b);
 }
 
+// 13. Kadane's algorithms
+class Solution {
+    public int maxSubArray(int[] nums) {
+        // jb subarray k sum -ve jaane lge to usko fhr se 0 set krke sum krna start kr dena 
+        int sum = 0;
+        int ans = Integer.MIN_VALUE;
+        for(int x: nums){
+            sum += x;
+            ans = Math.max(sum, ans);
+            if(sum < 0) sum = 0;
+        }
+        return ans;
+    }
+}
+
 // 14. Merge intervals
 class Solution {
     public int[][] merge(int[][] intervals) {
