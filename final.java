@@ -269,7 +269,43 @@ if(flag == 1){
         Arrays.sort(b);
 }
 
-// 
+// 14. Merge intervals
+class Solution {
+    public int[][] merge(int[][] intervals) {
+        // sbse pehle sort 2D array ko 
+        // ascending order me sorting
+        Arrays.sort(intervals, (a, b) -> a[0] - b[0]);
+        // [[1,3],[2,6],[8,10],[15,18]]
+        // list for storing elements
+        List<int[]> ans = new ArrayList<>();
+
+        // two pointer start and end
+        int start = intervals[0][0]; // 1
+        int end = intervals[0][1]; // 4
+
+        for(int i = 1; i < intervals.length; i++){
+            if(intervals[i][0] <= end){
+                // 2 < 3 
+                end = Math.max(end, intervals[i][1]);
+                // end --> max(3, 6) --> 6
+            }
+                // 2nd iteration me 
+                // 8 < 6 --> nhi h  
+            // to wo else part m jaega 
+            else {
+                ans.add(new int[]{start, end});
+                // ans = { [1, 6], [8, 10]};
+                start = intervals[i][0]; // 15
+                end = intervals[i][1]; // 18
+            }
+        }
+        ans.add(new int[]{start, end});
+        // ans = { [1, 6], [8, 10], [15, 18]};
+
+        return ans.toArray(new int[ans.size()][]);
+        
+    }
+}
 
 
 // 24.Find the longest consecutive sequence in an array
