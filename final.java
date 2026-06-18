@@ -656,6 +656,148 @@ class Solution {
     }
 }
 
+// 23.Max product subarray
+        class Solution {
+    int maxProduct(int[] arr) {
+        
+        // max product --> algorithm minPro * -ve = maxProd 
+        // we need to track min product also bcz if current element 
+        //of an array is -ve so we mutlitplying with min product we get the max product final ans
+        
+        
+        /*
+        We maintain minProduct as well because multiplying a 
+        negative number with the minimum product can produce the 
+        maximum product.
+        */
+        int maxProd = arr[0] ;// -2
+        int minProd = arr[0]; // -2
+        int ans = arr[0]; // -2
+        
+        for(int i = 1; i < arr.length; i++){
+            // if arr[i] current element is -ve so we swap 
+            // 1 --> 6
+            // 2--> -3 --> swap maxProd = -12
+            if(arr[i] < 0){
+                int temp = maxProd;
+                maxProd = minProd;
+                minProd = temp;
+            }
+            
+            maxProd = Math.max(arr[i], maxProd * arr[i]); 
+            // 6, -12 --> 6
+            minProd = Math.min(arr[i], minProd * arr[i]); 
+            // 6, -12 --> -12
+            
+            ans = Math.max(ans, maxProd);
+            // 6
+        }
+        
+        return ans;
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // one more test case dry run
+        // test_case - 2
+        /*
+        -1, -3, -10, 0, 6
+        0     1   2   3  4
+        min = -1, max = -1, ans = -1
+        i --> 1 --> arr[i] --> -3
+        max = -3, -3 * -1 --> -3, 3 --> 3
+        min = -3, -3 * -1 --> -3, 3 --> -3
+        
+        ans = -1, 3 -->  3
+        
+        
+        i = 2 --> arr[i] = -10
+        
+        swap --> max = -3; min = 3
+        
+        max = -10, -10 * -3 --> -10, 30 --> 30
+        min = -10, -10 * 3 --> -10, -30 --> -30
+        
+        ans = 3, 30 --> 30
+        */
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // int maxProd = arr[0]; // -2
+        // int minProd = arr[0]; // -2
+        // int ans = arr[0]; // -2
+        
+        // for (int i = 1; i < arr.length; i++) {
+        //     // i = 1 --> 6
+        //     // i = 2 --> -3
+        //     // i = 3 --> -10
+        //     // i = 4 --> 0
+        //     // i = 5 --> 2
+        //     // If current element is negative, swap --> minProd * -ve = maxans ; maxprod * -ve = minans
+        //     // temp = 6; maxProd = -12; minProd = 6
+        //     // temp = 36; maxProd = -18; minProd = 36
+        //     if (arr[i] < 0) {
+        //         int temp = maxProd;
+        //         maxProd = minProd;
+        //         minProd = temp;
+        //     }
+        //     // 
+
+        //     // Update max and min products
+        //     maxProd = Math.max(arr[i], maxProd * arr[i]);
+        //     // maxProd = (6, -2 * 6) = (6, -12) = 6
+        //     // maxProd = (-3, -12 * -3) = (-3, 36) = 36
+        //     // maxProd = (-10, -18 * -10) = 180
+        //     // maxProd = (0, 180 * 0) = (0, 0) = 0 
+        //     // maxProd = (2, 2 * 0) = 2
+        //     minProd = Math.min(arr[i], minProd * arr[i]);
+        //     // minProd = (6, -2 * 6) = (6, -12) = -12
+        //     // minProd = (-3, 6 * -3) = (-3, -18) = -18
+        //     // minProd = (-10, 36 * -10) = (-10,-360) = -360
+        //     // minProd = 0, 0 * ..) --> 0
+        //     // minProd = 2, 0--> 0
+        //     // Update answer
+        //     ans = Math.max(ans, maxProd);
+        //     // ans = 6
+        //     // ans = 6, 36 --> 36
+        //     // ans = 36, 180 --> 180
+        //     // ans = 0, 180 --> 180
+        //     // 180, 2 --> 180
+        // }
+
+        // return ans; // 180
+    }
+}
+
+
 // 24.Find the longest consecutive sequence in an array
 class Solution {
     public int longestConsecutive(int[] arr) {
