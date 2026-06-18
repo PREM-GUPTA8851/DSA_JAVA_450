@@ -826,6 +826,33 @@ class Solution {
     }
 }
 
+// 25.Elements Appearing More Than n/k Times
+class Solution {
+    public int countOccurence(int[] arr, int k) {
+
+        int n = arr.length;
+
+        // frequency store karne ke liye
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        // har element ki frequency count karo
+        for (int num : arr) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        int count = 0;
+
+        // check karo kaunse elements n/k se jyada baar aaye hain
+        for (int freq : map.values()) {
+
+            if (freq > n / k) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
 // 40,41 last one Median of an Array
 class Solution {
     public double findMedian(int[] arr) {
