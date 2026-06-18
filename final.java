@@ -546,6 +546,49 @@ class Solution {
        return ans;
     }
 }
+// 20. Alternate +ve and -ve 
+class Solution {
+    void rearrange(ArrayList<Integer> arr) {
+        
+        // We traverse the array once to separate positive and negative elements and once more to rearrange them alternately.
+// Therefore time complexity is O(n) and extra space used is O(n).
+        
+        //[9, 4, -2, -1, 5, 0, -5, -3, 2]
+        // --> 2 arraylist create krenge pos aur -ve 
+        ArrayList<Integer> pos = new ArrayList<Integer>();
+        ArrayList<Integer> neg = new ArrayList<Integer>();
+        // pos me +ve elements add krte rhenge 
+        for(int i : arr){
+            // agar +ve hua to pos me add krna elements
+            if(i >= 0) pos.add(i); // 9 4 5 0 2
+            else neg.add(i); // -2 -1  -5 -3
+        }
+        // aur -ve me -ve elements add krte rhenge 
+        int i = 0;
+        int p = 0;
+        int n = 0;
+        
+        while(p < pos.size() && n < neg.size()){
+            //then same array p update krna h element's ko loop chleaeng till 
+        // pos.size() && -ve.size() aur tb tk hr iteration p, n add krte rhenge
+        // pehle +ve element add krenge then uske baad -ve element
+        arr.set(i++, pos.get(p++)); // 0--> 9 , 2--> 4, 4-->5, 6--> 0 ,2?
+        arr.set(i++, neg.get(n++)); // 1--> -2, 3-->-1, 5-->-5,7-->-3
+        
+        
+        }
+        // agar positive bach jaenge 
+        while(p < pos.size()){
+            arr.set(i++, pos.get(p++));
+        }
+        // agar -ve bach jaenge
+        while(n < neg.size()){
+            arr.set(i++, neg.get(n++));
+        }
+    }
+}
+
+
 
 // 24.Find the longest consecutive sequence in an array
 class Solution {
