@@ -394,6 +394,34 @@ right = 5
 
  */
 
+// 17. Best time to buy and sell stock
+class Solution {
+    public int maxProfit(int[] prices) {
+
+        int minPrice = Integer.MAX_VALUE; 
+        int maxProfit = 0;
+
+        for (int price : prices) {
+            // price --> 7, 1, 5, 3, 6
+            minPrice = Math.min(minPrice, price);
+            // minPrice = min(max, 7) --> 7
+            // minPrice = min(7, 1) --> 1
+            // minPrice = min(1, 5) -- > 1
+            // minPrice = min(1,2) --> 1
+            // minPrice = min(1,6) --> 1
+            maxProfit = Math.max(maxProfit, price - minPrice);
+            //maxprofit = max(0, 7 - 7)--> 0
+            // maxProfit = max(0, 1-1) --> 0
+            // maxprofit = max(0, 5-1)--> 4
+            // maxprofit = max(4, 3-1)--> 4
+            // maxProfit = max(4, 6-1) --> 5
+        }
+        return maxProfit;
+        // 5
+    }
+}
+
+
 // 24.Find the longest consecutive sequence in an array
 class Solution {
     public int longestConsecutive(int[] arr) {
