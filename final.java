@@ -496,7 +496,56 @@ class Solution {
     }
 }
 
+// 19. Common in 3 sorted arrays
+class Solution {
+    public ArrayList<Integer> commonElements(int[] a, int[] b, int[] c) {
+      ArrayList<Integer> ans = new ArrayList<>();
+       int len1= a.length;
+       int len2 = b.length;
+       int len3 = c.length;
+       int i = 0;
+       int j = 0;
+       int k = 0;
+       while(i < len1 && j < len2 && k < len3){
+           
+            // Skip duplicates in a
+            if (i > 0 && a[i] == a[i - 1]) {
+                i++;
+                continue;
+            }
 
+            // Skip duplicates in b
+            if (j > 0 && b[j] == b[j - 1]) {
+                j++;
+                continue;
+            }
+
+            // Skip duplicates in c
+            if (k > 0 && c[k] == c[k - 1]) {
+                k++;
+                continue;
+            }
+           
+           if(a[i] == b[j] && b[j] == c[k]){
+               // jb equal mil gya 
+               ans.add(a[i]);
+               i++;
+               j++;
+               k++;
+           }
+           else if(a[i] < b[j]){
+               i++;
+           }
+           else if(b[j] < c[k]){
+               j++;
+           }
+           else {
+               k++;
+           }
+       }
+       return ans;
+    }
+}
 
 // 24.Find the longest consecutive sequence in an array
 class Solution {
