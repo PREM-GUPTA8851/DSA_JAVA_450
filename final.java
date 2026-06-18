@@ -588,7 +588,33 @@ class Solution {
     }
 }
 
+// 21. Subaaray with sum 0
+class Solution {
 
+    static boolean findsum(int arr[]) {
+
+        HashSet<Integer> set = new HashSet<>();
+
+        int prefixSum = 0;
+
+        for (int num : arr) {
+
+            prefixSum += num;
+
+            // Case 1: starting se current index tak sum 0
+            if (prefixSum == 0)
+                return true;
+
+            // Case 2: same prefix sum pehle aa chuka hai
+            if (set.contains(prefixSum))
+                return true;
+
+            set.add(prefixSum);
+        }
+
+        return false;
+    }
+}
 
 // 24.Find the longest consecutive sequence in an array
 class Solution {
