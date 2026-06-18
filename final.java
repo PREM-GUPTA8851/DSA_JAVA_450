@@ -421,6 +421,82 @@ class Solution {
     }
 }
 
+// 18.Two sum -Pairs with 0 Sum
+// User function Template for Java
+
+class Solution {
+    public static ArrayList<ArrayList<Integer>> getPairs(int[] arr) {
+        // code here
+        // test case --> -1 0 1 2 -1 -4
+        // after sort bcz time complexity -- n log n
+        // -4 -1 -1 0 1 2 
+        // -4 + 2 = -2 < 0 i++ 
+        // -1 + 2 = 1 > 0 j--
+        // -1 + 1 = 0 return pair
+        
+        // 2nd test case 
+        // run loop till i <= j
+        // --> 6, 1, 8, 0, 4, -9, -1, -10, -6, -5
+        // sort k baad --> -10 -9 -6 -5 -1 0 1  4 6 8 
+        // -10 + 8 = -2 < 0 i++
+        // -9 + 8 = -1 < 0 i++
+        // -6 + 8 = 2 > 0 j--
+        // -6 + 6 = 0 return this------------- and i++ j-- along with
+        // -5 + 4 = -1 < 0 i++
+        // -1 + 4 = 3 > 0 j--
+        // -1 + 1 = 0 return this and i++ j-- \
+        
+        // final answer list 2D list
+        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+        
+        // tese case 
+        //arr -->  - 8 -10 -10 -10 10 6 1 10
+        
+        // sort an array
+        Arrays.sort(arr);
+        // -10 -10 -10 -8 1 6 10 10
+        
+        int i = 0; 
+        int j = arr.length - 1; //7
+        
+        while(i < j){
+            
+        int sum = arr[i] + arr[j] ;// -10 + 10 = 0 
+            if(sum == 0) {
+                // pair mil gya ab store krna h 
+                ArrayList<Integer> pair = new ArrayList<>();
+                
+                pair.add(arr[i]); // [-10]
+                pair.add(arr[j]); // [-10, 10]
+                
+                ans.add(pair); // [-10, 10]
+                
+                // now handling duplicate elements
+                int left = arr[i];// -10
+                int right = arr[j]; // 10
+                
+                while(i < j && arr[i] == left){
+                    i++;
+                }
+                
+                
+                while(i < j && arr[j] == right){
+                    j--;
+                }
+            }
+            
+            else if(sum < 0){
+                i++;
+            }
+            else {
+                j--;
+            }
+        }
+        return ans;
+    }
+}
+
+
 
 // 24.Find the longest consecutive sequence in an array
 class Solution {
