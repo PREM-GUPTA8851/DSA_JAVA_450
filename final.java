@@ -616,6 +616,46 @@ class Solution {
     }
 }
 
+// 22.Factorials of a large number
+class Solution {
+    public ArrayList<Integer> factorial(int n) {
+
+        // stores factorial digits in reverse order
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        ans.add(1); // 0! = 1, 1! = 1
+
+        // multiply current result by every number from 2 to n
+        for (int x = 2; x <= n; x++) {
+
+            int carry = 0;
+
+            // multiply x with each digit
+            for (int i = 0; i < ans.size(); i++) {
+
+                int product = ans.get(i) * x + carry;
+
+                ans.set(i, product % 10);
+
+                carry = product / 10;
+            }
+
+            // store remaining carry digits
+            while (carry > 0) {
+
+                ans.add(carry % 10);
+
+                carry /= 10;
+            }
+        }
+
+        // reverse because digits were stored backwards
+        Collections.reverse(ans);
+
+        return ans;
+    }
+}
+
 // 24.Find the longest consecutive sequence in an array
 class Solution {
     public int longestConsecutive(int[] arr) {
