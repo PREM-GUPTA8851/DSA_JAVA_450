@@ -82,22 +82,93 @@ class Solution {
 
 //4.sort 0s,1s and 2s
 class Solution {
-    public void sort012(int[] arr) {
-        int c0 = 0, c1 = 0, c2 = 0;
+  public:
+    void sort012(vector<int>& arr) {
 
-        for(int x : arr){
-            if(x == 0) c0++;
-            else if(x == 1) c1++;
-            else c2++;
+        // int count0 = 0;
+        // int count1 = 0;
+        // int count2 = 0;
+
+        // // count frequency of 0,1,2
+        // for(int num : arr){
+
+        //     if(num == 0)
+        //         count0++;
+
+        //     else if(num == 1)
+        //         count1++;
+
+        //     else
+        //         count2++;
+        // }
+
+        // int index = 0;
+
+        // // fill 0s
+        // while(count0--){
+        //     arr[index++] = 0;
+        // }
+
+        // // fill 1s
+        // while(count1--){
+        //     arr[index++] = 1;
+        // }
+
+        // // fill 2s
+        // while(count2--){
+        //     arr[index++] = 2;
+        // }
+        
+        int low = 0;
+        int mid = 0;
+        int high = arr.size() - 1;  // 5
+
+        // Example:
+        // [ 0, 1, 2, 0, 1, 2]
+
+        while(mid <= high){
+        // 0 < 5
+        // 1 <= 5
+        // 2 <= 5 --> 0,1,2,0,1,2
+        // 2 <= 4 --> 0,1,1,0,2,2
+        // 2 <= 3 --> 0,1,1,0,2,2
+        // 3 <=3 --> 0,0,1,1,2,2
+                
+            if(arr[mid] == 0){
+            // arr[0] == 0 
+                swap(arr[low], arr[mid]);
+            // swap(arr[0], arr[0]);
+                low++;
+                mid++;
+                // low = 1
+                // mid = 1
+                // 0,1,2,0,1,2
+            }
+            // arr[1] == 1
+            else if(arr[mid] == 1){
+
+                // 1 already correct position zone me hai
+                
+                mid++;
+                // mid = 2
+            }
+            
+            else{
+            
+                swap(arr[mid], arr[high]);
+            // swap(2,2)
+                high--;
+            // high = 4
+            // 0,1,2,0,1,2
+                // mid ko increment nahi karenge
+
+                // kyuki high se jo element aaya hai
+                // usko abhi check hi nahi kiya
+            }
         }
-
-        int i = 0;
-
-        while(c0-- > 0) arr[i++] = 0;
-        while(c1-- > 0) arr[i++] = 1;
-        while(c2-- > 0) arr[i++] = 2;
+        
     }
-}
+};
 
 //5. program to Move all negative numbers to beginning and positive to end
 class GfG {
