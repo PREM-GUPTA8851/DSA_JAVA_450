@@ -924,6 +924,46 @@ class Solution {
         return count;
     }
 }
+
+// 39. Array with all palimdromes
+class Solution {
+public:
+
+    bool isPalindrome(int num)
+    {
+        string s = to_string(num);
+
+        int left = 0;
+        int right = s.length() - 1;
+
+        // Two Pointer Approach
+        while(left < right)
+        {
+            if(s[left] != s[right])
+                return false;
+
+            left++;
+            right--;
+        }
+
+        return true;
+    }
+
+    bool isPalinArray(vector<int> &arr)
+    {
+        // O(n)
+        for(int num : arr)
+        {
+            // Har element ke liye palindrome check
+            if(!isPalindrome(num))
+                return false;
+        }
+
+        return true;
+    }
+};
+
+
 // 40,41 last one Median of an Array
 class Solution {
     public double findMedian(int[] arr) {
