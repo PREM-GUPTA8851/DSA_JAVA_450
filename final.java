@@ -227,7 +227,7 @@ class Solution {
     }
 }
 
-// 7. Rotate Array by One
+// 7. Rotate Array by 1
 class Solution {
   public:
     void rotate(vector<int> &arr) {
