@@ -924,6 +924,40 @@ class Solution {
         return count;
     }
 }
+
+// 32.Three way partitioning
+class Solution {
+    public void threeWayPartition(int arr[], int a, int b) {
+        // dutch national flag 
+        // ....<a | | a>= <=b | b>...
+        int low = 0;
+        int mid = 0;
+        int high = arr.length - 1;
+        
+        while(mid <= high){
+            // if < a 
+            if(arr[mid] < a){
+                int temp = arr[mid];
+                arr[mid] = arr[low];
+                arr[low] = temp;
+                low++;
+                mid++;
+            }
+            else if(arr[mid] >= a && arr[mid] <= b){
+                mid++;
+            } 
+            else {
+                // greather than b
+                // swap with last
+                int temp = arr[high];
+                arr[high] = arr[mid];
+                arr[mid] = temp;
+                high--;
+            }
+        }
+    }
+}
+
 //33.Minimum swaps and K together
 class Solution {
     // Function for finding maximum and value pair
