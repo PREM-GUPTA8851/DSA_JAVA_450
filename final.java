@@ -924,8 +924,50 @@ class Solution {
         return count;
     }
 }
+//33.Minimum swaps and K together
+class Solution {
+    // Function for finding maximum and value pair
+    int minSwap(int[] arr, int k) {
+        // pehle isme elements count krna h jo less 
+        // than k h jinhe ek sath rkhna h 
+        int good = 0;
+        for(int num:  arr){
+            if(num <= k) good++;
+        }
+        // good = 5
+        // fhir isme bad element count krne h 
+        // ki good element ki length tk bad elements 
+        // kitne h  --> ek window milegi
+        int bad = 0;
+        for(int i = 0; i < good; i++){
+            if(arr[i] > k) bad++;
+        }
+        // bad = 2
+        int ans = bad;
+        int i = 0;
+        int j = good;
+        
+        while(j < arr.length){
+            // pehle jo element jaa rha uske according aapan bad element update kr de 
+            if(arr[i] > k){
+                bad--;
+            }
+            
+            if(arr[j] > k) bad++;
+            i++;
+            j++;
+            
+            ans = Math.min(ans, bad);
+        }
+        
+        
+        // hume minimum swaps chahiye
+        return ans;
+    }
+}
 
-// 39. Array with all palimdromes
+
+// 34. Array with all palimdromes
 class Solution {
 public:
 
@@ -964,7 +1006,7 @@ public:
 };
 
 
-// 40,41 last one Median of an Array
+// 35,36 last one Median of an Array
 class Solution {
     public double findMedian(int[] arr) {
         Arrays.sort(arr);
