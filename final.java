@@ -925,6 +925,37 @@ class Solution {
     }
 }
 
+// 31.minimum subarray length with sum greater than x
+class Solution {
+    public static int smallestSubWithSum(int x, int[] arr) {
+
+        int sum = 0;
+        int left = 0;
+        int length = 0;
+        int ans = Integer.MAX_VALUE;
+
+        for (int num : arr) {
+
+            sum += num;
+            length++;
+
+            // Jab tak sum > x hai, window valid hai
+            while (sum > x) {
+
+                // Current valid window ka answer update karo
+                ans = Math.min(ans, length);
+
+                // Window shrink karo
+                sum -= arr[left];
+                left++;
+                length--;
+            }
+        }
+
+        return ans == Integer.MAX_VALUE ? 0 : ans;
+    }
+}
+
 // 32.Three way partitioning
 class Solution {
     public void threeWayPartition(int arr[], int a, int b) {
