@@ -980,7 +980,34 @@ public int trap(int[] height) {
 }
 
 // 30.Chocolate distribution problem.
-
+class Solution {
+    public int findMinDiff(int arr[], int m) {
+        
+        int n = arr.length;
+        // 7
+        // Agar students packets se zyada hain
+        if(m > n) {
+            return 0;
+        }
+        
+        // Step 1: Sort array
+        Arrays.sort(arr);
+        // 2,3,4,7, 9, 12, 56
+        int ans = Integer.MAX_VALUE;
+        // 60
+        // Step 2: Window size = m
+        // n - m = 7 - 3 = 4
+        for(int i = 0; i <= n - m; i++) {
+            // i = 0, 1
+            int minChocolate = arr[i]; // 2, 3
+            int maxChocolate = arr[i + m - 1]; // 4, 7
+            
+            ans = Math.min(ans, maxChocolate - minChocolate);
+            // ans = 2, 
+        }
+        return ans;
+    }
+}
 
 // 31.minimum subarray length with sum greater than x
 class Solution {
