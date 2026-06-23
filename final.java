@@ -924,6 +924,33 @@ class Solution {
         return count;
     }
 }
+// 27. Array Subset
+class Solution {
+    public boolean isSubset(int a[], int b[]) {
+
+        // frequency store karenge
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        // a ki frequency count
+        for (int num : a) {
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        // b ke elements consume karenge
+        for (int num : b) {
+
+            // element nahi mila
+            if (!map.containsKey(num) || map.get(num) == 0) {
+                return false;
+            }
+
+            // frequency decrease
+            map.put(num, map.get(num) - 1);
+        }
+
+        return true;
+    }
+}
 
 // 28. Triplet sum in an array
 class Solution {
