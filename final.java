@@ -925,8 +925,63 @@ class Solution {
     }
 }
 
-// 29. Trapping Rain Water
+// 28. Triplet sum in an array
+class Solution {
+    public boolean hasTripletSum(int arr[], int target) {
 
+        int n = arr.length; // 6
+        // 1,2,3,4,6,7
+        // 3,6,7,10,20,40
+        // target = 11;
+        // Step 1:
+        // Array sort karenge taaki two pointer use kar sake
+        Arrays.sort(arr);
+        
+        // Step 2:
+        // Har element ko first element maan kar
+        // remaining target ke liye two sum solve karenge
+        for (int i = 0; i < n - 2; i++) {
+// 0 < 4
+            int left = i + 1;      // 1
+            int right = n - 1;     // 5
+
+            while (left < right) {
+    // 1 < 5
+    // 1 < 4
+    // 1 < 3
+                int sum = arr[i] + arr[left] + arr[right];
+//49 > 24
+// 29 > 24
+// 19 < 24
+// 20 < 24
+
+                // Triplet mil gaya
+                if (sum == target) {
+                    return true;
+                }
+
+                // Sum chota hai
+                // Sorted array me sum badhane ke liye
+                // left ko aage badhao
+                else if (sum < target) {
+                    left++;
+                }
+
+                // Sum bada hai
+                // Sorted array me sum kam karne ke liye
+                // right ko peeche lao
+                else {
+                    right--;
+                }
+            }
+        }
+
+        return false;
+    }
+}
+
+
+// 29. Trapping Rain Water
 class Solution {
 public int trap(int[] height) {
     // 0, 1, 0, 2, 1, 0, 3, 2, 1, 2, 1
