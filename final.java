@@ -1256,6 +1256,35 @@ class Solution {
     }
 }
 
-/*  
+// ===============================(Matrix)=======================================
 
-*/
+//2. Search in a 2D matrix.
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        // total elements
+        // row size and column size
+        int rs= matrix.length;  // 3
+        int cs = matrix[0].length; // 4
+        //  System.out.println(cs);
+        int start = 0;
+        int end = (rs * cs) - 1; // 11
+        while(start <= end){
+            int mid = start + (end - start)/2;
+            // mid = 0 + 5=5
+            int row = mid / cs; // 5/4 = 1  
+            int col = mid % cs; // 5 % 4 = 1
+            // jb target mil jae to 
+            // m[1][1] = 11
+            if(matrix[row][col] == target){
+                return true;
+            }
+            else if(matrix[row][col] < target){
+                start = mid + 1;
+            }
+            else{
+                end = mid - 1;
+            }
+        }
+        return false;
+    }
+}
