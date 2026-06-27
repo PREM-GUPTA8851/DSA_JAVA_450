@@ -1345,3 +1345,78 @@ class Solution {
         return false;
     }
 }
+
+// 3. Median in a row wise sorted matrix
+/*
+Input: mat[][] = [[1, 3, 5], 
+                [2, 6, 9], 
+                [3, 6, 9]]
+Output: 5
+Explanation: Sorting matrix elements gives us [1, 2, 3, 3, 5, 6, 6, 9, 9]. Hence, 5 is median.
+Input: mat[][] = [[2, 4, 9],
+                [3, 6, 7],
+                [4, 7, 10]]
+Output: 6
+Explanation: Sorting matrix elements gives us [2, 3, 4, 4, 6, 7, 7, 9, 10]. Hence, 6 is median.
+Input: mat = [[3], [4], [8]]
+Output: 4
+Explanation: Sorting matrix elements gives us [3, 4, 8]. Hence, 4 is median.
+Constraints:
+1 ≤ n, m ≤ 400
+1 ≤ mat[i][j] ≤ 2000
+
+Expected Complexities
+Time Complexity: O(n log m * log(maxVal – minVal))
+Auxiliary Space: O(1)
+*/
+class Solution {
+    public int median(int[][] mat) {
+        // median find krne k logic 
+        // median se pehle element total element k half hone chahiye
+        // to total elements
+        int row_size = mat.length ;
+        int col_size = mat[0].length;
+        
+        int total_elements = row_size * col_size;
+        int req = total_elements/2;
+        int min_value = Integer.MAX_VALUE;
+        int max_value = Integer.MIN_VALUE;
+        
+        for(int[] row: mat){
+            min_value = Math.min(min_value, row[0]);
+            max_value = Math.max(max_value, row[col_size - 1]);
+        }
+        
+        int start = min_value;
+        int end = max_value;
+        while(start < end){
+            int mid = start + (end - start) / 2; // 5
+            int count = 0;
+            // ab hr row m 5 se chota element count krenge 
+            for(int[] row: mat){
+                count += upper_bound(row, mid);
+            }
+            if(count <= req){
+                start = mid + 1;
+            }
+            else {
+                end = mid;
+            }
+        }
+        return start;
+    }
+    
+    int upper_bound(int[] row, int m){
+            int low = 0; 
+            int high = row.length;
+            while(low < high){
+                int mid = (low + high)/2;
+                if(row[mid] <= m){
+                    low = mid + 1;
+                }else {
+                    high = mid;
+                }
+            }
+            return low;
+        }
+}
