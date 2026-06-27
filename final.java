@@ -1460,3 +1460,37 @@ class Solution {
         return ans;
     }
 };
+
+//5.Sort a Matrix
+import java.util.Arrays;
+
+class Solution {
+    int[][] sortedMatrix(int[][] mat) {
+
+        int n = mat.length;
+
+        // Step 1 : Flatten Matrix
+        int[] arr = new int[n * n];
+        int k = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                arr[k++] = mat[i][j];
+            }
+        }
+
+        // Step 2 : Sort 1D Array
+        Arrays.sort(arr);
+
+        // Step 3 : Fill Back into Matrix
+        k = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                mat[i][j] = arr[k++];
+            }
+        }
+
+        return mat;
+    }
+}
