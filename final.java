@@ -1420,3 +1420,43 @@ class Solution {
             return low;
         }
 }
+
+// 4.Row with Max 1s in Rowwise Sorted
+/*
+Input: arr[][] = [[0,1,1,1],
+               [0,0,1,1],
+               [1,1,1,1],
+               [0,0,0,0]]
+Output: 2
+Explanation: Row 2 contains the most number of 1s (4 1s). Hence, the output is 2.
+Input: arr[][] = [[0,0],
+               [1,1]]
+Output: 1
+Explanation: Row 1 contains the most number of 1s (2 1s). Hence, the output is 1.
+Input: arr[][] = [[0,0], 
+               [0,0]]
+Output: -1
+Explanation: No row contains any 1s, so the output is -1.
+*/
+class Solution {
+    public int rowWithMax1s(int[][] arr) {
+        // time complexity --> O(n + m)
+        // start krna h 
+        int i = 0; 
+        int row_size = arr.length;
+        int col_size = arr[0].length;
+        int j = col_size - 1; 
+        int ans = -1;
+        
+        while(i < row_size && j >=0){
+            if(arr[i][j] == 1){
+                j--;
+                ans = i;
+            }
+            else {
+                i++;
+            }
+        }
+        return ans;
+    }
+};
