@@ -1494,3 +1494,61 @@ class Solution {
         return mat;
     }
 }
+
+// kth smallest element in a matrix
+class Solution {
+
+    public int kthSmallest(int[][] matrix, int k) {
+
+        int n = matrix.length;
+        int m = matrix[0].length;
+
+        // Smallest value
+        int low = matrix[0][0];
+
+        // Largest value
+        int high = matrix[n - 1][m - 1];
+
+        while (low < high) {
+
+            int mid = low + (high - low) / 2;
+
+            int count = 0;
+
+            // Count elements <= mid
+            for (int[] row : matrix) {
+                count += upperBound(row, mid);
+            }
+
+
+            if (count < k) {
+                // kth smallest right side me hoga
+                low = mid + 1;
+            } else {
+                // answer left side ya mid ho sakta hai
+                high = mid;
+            }
+        }
+
+        return low;
+    }
+
+    // Returns count of elements <= x
+    private int upperBound(int[] arr, int x) {
+
+        int l = 0;
+        int h = arr.length;
+
+        while (l < h) {
+
+            int mid = l + (h - l) / 2;
+
+            if (arr[mid] <= x)
+                l = mid + 1;
+            else
+                h = mid;
+        }
+
+        return l;
+    }
+}
