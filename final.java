@@ -1638,3 +1638,53 @@ class Solution {
     return sb.toString();
     }
 }
+
+
+// 2. Valid Palindrome
+/*
+Input: s = "A man, a plan, a canal: Panama"
+Output: true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+Example 2:
+
+Input: s = "race a car"
+Output: false
+Explanation: "raceacar" is not a palindrome.
+Example 3:
+
+Input: s = " "
+Output: true
+Explanation: s is an empty string "" after removing non-alphanumeric characters.
+	*/
+Since an empty string reads the same forward and backward, it is a palindrome.
+class Solution {
+    boolean isPalindrome(String s) {
+        // code here
+        int first = 0;
+        int last = s.length() -1;
+        // jb tk first < last
+        while(first < last){
+            
+        // agar non-alphanumeric agar mila to skip kiya jae
+        if(!Character.isLetterOrDigit(s.charAt(first))){
+            first++;
+            continue;
+        }
+        if(!Character.isLetterOrDigit(s.charAt(last))){
+            last--;
+            continue;
+        }
+
+        // tb tk pehle character ko lowercase me kiya jae 
+            char fi = Character.toLowerCase(s.charAt(first));
+            char la = Character.toLowerCase(s.charAt(last));
+        //  tb tk agar koi element mimatch mila return false
+        if(fi != la){
+            return false;
+        }
+        first++;
+        last--;
+        }
+        return true;
+    }
+}
