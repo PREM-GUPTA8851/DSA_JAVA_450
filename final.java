@@ -1610,4 +1610,31 @@ public static void main(String[] args)
 }
 }
 
-// This code contributed by Rajput-Ji
+//==============================(String)=====================================
+
+// 1.You are given a string s , the task is to reverse the string using stack.
+
+// Examples:
+
+// Input: s ="GeeksforGeeks"
+// Output:  skeeGrofskeeG
+// Input: s ="Geek"
+// Output: keeG
+
+class Solution {
+    public String reverse(String S) {
+        Stack<Character> ans = new Stack<>();
+        
+        // ab elements ko stack m push kro
+        for(int i = 0; i < S.length(); i++){
+            ans.push(S.charAt(i));
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        
+        while(!ans.empty()){
+            sb.append(ans.pop());
+    }
+    return sb.toString();
+    }
+}
