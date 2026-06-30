@@ -121,7 +121,6 @@ class Solution {
 
         for (int price : prices) {
             minPrice = Math.min(minPrice, price);
-            // minPrice = min(max, 7) --> 7
             maxProfit = Math.max(maxProfit, price - minPrice);
         }
         return maxProfit;
