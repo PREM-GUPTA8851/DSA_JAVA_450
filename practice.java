@@ -130,7 +130,6 @@ class Solution {
             maxProfit = Math.max(maxProfit, price - minPrice);
             //maxprofit = max(0, 7 - 7)--> 0
             // maxProfit = max(0, 1-1) --> 0
-            // maxprofit = max(0, 5-1)--> 4
         }
         return maxProfit;
         // 5
