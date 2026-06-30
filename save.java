@@ -39,7 +39,9 @@ class Solution {
     }
 }
 
-class Solution {
+
+
+class Solutions {
     public ListNode mergeKLists(ListNode[] lists) {
         PriorityQueue<ListNode> pq = new PriorityQueue<>((a,b) -> a.val - b.val);
 
