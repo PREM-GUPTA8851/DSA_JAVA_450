@@ -132,7 +132,6 @@ class Solution {
             // maxProfit = max(0, 1-1) --> 0
             // maxprofit = max(0, 5-1)--> 4
             // maxprofit = max(4, 3-1)--> 4
-            // maxProfit = max(4, 6-1) --> 5
         }
         return maxProfit;
         // 5
