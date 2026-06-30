@@ -124,7 +124,6 @@ class Solution {
             maxProfit = Math.max(maxProfit, price - minPrice);
         }
         return maxProfit;
-        // 5
     }
 }
 
