@@ -1,6 +1,30 @@
 // revision :-- 
 
-// WAFP for reverse an array 
+
+// 2.WAFP for min and max in an array 
+import java.util.ArrayList;
+
+class Main {
+    public static ArrayList<Integer> findMinMax(int[] num){
+        ArrayList<Integer> ans = new ArrayList<>();
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        for(int i: num){
+            min = Math.min(min, i);
+            max = Math.max(max, i);
+        }
+        ans.add(min);
+        ans.add(max);
+        return ans;
+    }
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 4, 1, 9};
+        ArrayList<Integer> result = findMinMax(arr);
+        System.out.println(result.get(0) + " " + result.get(1));
+    }
+}
+
+// 1.WAFP for reverse an array 
 import java.util.Arrays;
 
 class Main{
