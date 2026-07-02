@@ -1,7 +1,7 @@
 // revision :-- 
 
 
-// 2.WAFP for min and max in an array 
+// 2.WAFP for min and max in an array .
 import java.util.ArrayList;
 
 class Main {
