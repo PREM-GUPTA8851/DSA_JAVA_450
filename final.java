@@ -10,29 +10,29 @@ Output: [2, 1, 5, 4]
 Explanation: The first element 4 moves to last position, the second element 5 moves to second last and so on.
 */
 
-// import java.util.Arrays;
+import java.util.Arrays;
 
-// class save{
-//     public static void reverseArray(int[] arr){
-//         // reverse krna h ab two pointer method k use krke krte h ab
-//         int i = 0, j = arr.length -1 ;
-//         while(i <= j){
-//             int temp = arr[i];
-//             arr[i] = arr[j];
-//             arr[j] = temp;
-//             i++; 
-//             j--;
-//         }
-//     }
-//     public static void main(String[] args){
-//         int[] arr = { 1, 4, 3, 2, 6, 5};
+class save{
+    public static void reverseArray(int[] arr){
+        // reverse krna h ab two pointer method k use krke krte h ab
+        int i = 0, j = arr.length -1 ;
+        while(i <= j){
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            i++; 
+            j--;
+        }
+    }
+    public static void main(String[] args){
+        int[] arr = { 1, 4, 3, 2, 6, 5};
 
-//         reverseArray(arr);
-//         for(int i = 0; i < arr.length; i++){
-//             System.out.printf(arr[i] + " ");
-//         }
-//     }
-// }
+        reverseArray(arr);
+        for(int i = 0; i < arr.length; i++){
+            System.out.printf(arr[i] + " ");
+        }
+    }
+}
 
 //2.Find the max and min element in an array
 /*
@@ -47,29 +47,29 @@ Output: [1, 9]
 
 // // import java.util.ArrayList;
 
-// class GfG {
-//     public static ArrayList<Integer> findMinMax(int[] arr) {
-//         int mini = Integer.MAX_VALUE;
-//         int maxi = Integer.MIN_VALUE;
+class GfG {
+    public static ArrayList<Integer> findMinMax(int[] arr) {
+        int mini = Integer.MAX_VALUE;
+        int maxi = Integer.MIN_VALUE;
         
-//         // Find minimum and maximum
-//         for (int num : arr) {
-//             if (num < mini) mini = num;
-//             if (num > maxi) maxi = num;
-//         }
+        // Find minimum and maximum
+        for (int num : arr) {
+            if (num < mini) mini = num;
+            if (num > maxi) maxi = num;
+        }
         
-//         ArrayList<Integer> result = new ArrayList<>();
-//         result.add(mini);
-//         result.add(maxi);
-//         return result;
+        ArrayList<Integer> result = new ArrayList<>();
+        result.add(mini);
+        result.add(maxi);
+        return result;
     
-// }
+}
 
-//     public static void main(String[] args) {
-//         int[] arr = {3, 5, 4, 1, 9};
-//         ArrayList<Integer> result = findMinMax(arr);
-//         System.out.println(result.get(0) + " " + result.get(1));
-//           }
+    public static void main(String[] args) {
+        int[] arr = {3, 5, 4, 1, 9};
+        ArrayList<Integer> result = findMinMax(arr);
+        System.out.println(result.get(0) + " " + result.get(1));
+          }
 // }
 
 // 3.Kth Smallest
@@ -85,39 +85,39 @@ class Solution {
   public:
     void sort012(vector<int>& arr) {
 
-        // int count0 = 0;
-        // int count1 = 0;
-        // int count2 = 0;
+        int count0 = 0;
+        int count1 = 0;
+        int count2 = 0;
 
-        // // count frequency of 0,1,2
-        // for(int num : arr){
+        // count frequency of 0,1,2
+        for(int num : arr){
 
-        //     if(num == 0)
-        //         count0++;
+            if(num == 0)
+                count0++;
 
-        //     else if(num == 1)
-        //         count1++;
+            else if(num == 1)
+                count1++;
 
-        //     else
-        //         count2++;
-        // }
+            else
+                count2++;
+        }
 
-        // int index = 0;
+        int index = 0;
 
-        // // fill 0s
-        // while(count0--){
-        //     arr[index++] = 0;
-        // }
+        // fill 0s
+        while(count0--){
+            arr[index++] = 0;
+        }
 
-        // // fill 1s
-        // while(count1--){
-        //     arr[index++] = 1;
-        // }
+        // fill 1s
+        while(count1--){
+            arr[index++] = 1;
+        }
 
-        // // fill 2s
-        // while(count2--){
-        //     arr[index++] = 2;
-        // }
+        // fill 2s
+        while(count2--){
+            arr[index++] = 2;
+        }
         
         int low = 0;
         int mid = 0;
