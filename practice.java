@@ -1,4 +1,11 @@
+// 5.Java program to Move all negative numbers
+// to beginning and positive to end
 
+class GfG {
+
+    static int[] move(int[] arr) {
+        int left = 0, right = arr.length - 1;
+        while (left < right) {
 
             // increment left while arr[left]
             // is negative
