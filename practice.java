@@ -1,4 +1,40 @@
-// revision :-- 
+
+
+            // increment left while arr[left]
+            // is negative
+            while (left < right && arr[left] < 0) {
+                left++;
+            }
+
+            // decrement right while arr[right]
+            // is positive
+            while (right > left && arr[right] > 0) {
+                right--;
+            }
+
+            // swap the two values.
+            if (right > left) {
+                int temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+                left++;
+                right--;
+            }
+        }
+
+        return arr;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {-12, 11, -13, -5, 6, -7, 5, -3, -6};
+        int[] ans = move(arr);
+
+        for (int num : ans) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
 
 class Solution {
     public void sort012(int[] arr) {
