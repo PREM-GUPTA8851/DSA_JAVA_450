@@ -13,7 +13,7 @@ class Solution {
 }
 
 // 5.Java program to Move all negative numbers
-// to beginning and positive to end
+// to beginning and positive to end.
 
 class GfG {
 
