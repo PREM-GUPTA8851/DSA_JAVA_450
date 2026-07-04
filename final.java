@@ -1710,6 +1710,36 @@ class Solution {
     }
 }
 
+// wap print all the duplicate's in the input String by using hashmap in java
+/*
+Input: s = "geeksforgeeks"
+Output: ['e', 4], ['g', 2], ['k', 2], ['s', 2]
+Explanation: Characters e, g, k, and s appear more than once. Their counts are shown in order of first occurrence.
+*/
+import java.util.*;
+
+class Main{
+    public static void printDuplicates(String s){
+        HashMap<Character,Integer> ans = new HashMap<>();
+        for(Character c: s.toCharArray()){
+            ans.put(c, ans.getOrDefault(c,  0) + 1);
+        }
+
+        for(Map.Entry<Character, Integer> it: ans.entrySet()){
+            if(it.getValue() > 1){
+                System.out.println("[" + it.getKey() + ", " + it.getValue() + "]");
+            }
+        }
+    }
+    public static void main(String[] args){
+        String s = "geeksforgeeks";
+        printDuplicates(s);
+    }
+}
+
+
+
+
 // 4.wap to check if strings are rotation of each other.
 class Solution {
     public boolean rotateString(String s1, String s2) {
