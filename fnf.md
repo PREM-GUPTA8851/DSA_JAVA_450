@@ -1,4 +1,4 @@
-## Wap to reverse an array
+## 1.Wap to reverse an array
 
 ```java
 class Solution {
