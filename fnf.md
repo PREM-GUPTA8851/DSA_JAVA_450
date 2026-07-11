@@ -1,8 +1,8 @@
 ## Wap to reverse an array
 
+```java
 class Solution {
     public void reverseArray(int arr[]) {
-
         int left = 0;
         int right = arr.length - 1;
 
@@ -16,3 +16,4 @@ class Solution {
         }
     }
 }
+```
