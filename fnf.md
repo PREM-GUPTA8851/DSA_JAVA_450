@@ -1,4 +1,4 @@
-## 1.Wap to reverse an array
+# 1.Wap to reverse an array
 
 ```java
 class Solution {
@@ -17,3 +17,27 @@ class Solution {
     }
 }
 ```
+
+# 2. Maximum and Min in an array
+
+```java
+class Solution {
+    public ArrayList<Integer> getMinMax(int[] arr) {
+
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+
+        for (int num : arr) {
+            if (num < min) min = num;
+            if (num > max) max = num;
+        }
+
+        ArrayList<Integer> ans = new ArrayList<>();
+        ans.add(min);
+        ans.add(max);
+
+        return ans;
+    }
+}
+```
+
