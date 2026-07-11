@@ -1,4 +1,5 @@
-- 6. Union of 2 arrays and return in Sorted order
+## **6. Union of 2 arrays and return in Sorted order**
+    '''
 class Solution {
     public static ArrayList<Integer> findUnion(int[] a, int[] b) {
         // code here
@@ -11,7 +12,7 @@ class Solution {
         return new ArrayList<>(ans);
     }
 }
-
+'''
 // 5.Java program to Move all negative numbers
 // to beginning and positive to end.
 
