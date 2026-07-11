@@ -1,4 +1,4 @@
-// 6. Union of 2 arrays and return in Sorted order
+- 6. Union of 2 arrays and return in Sorted order
 class Solution {
     public static ArrayList<Integer> findUnion(int[] a, int[] b) {
         // code here
