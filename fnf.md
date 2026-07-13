@@ -151,7 +151,7 @@ class Solution {
 }
 ```
 
-# 7.Rotate Array by 1 
+# 7.Rotate Array by 1 .
 ```java
 class Solution {
     public void rotate(int[] arr) {
