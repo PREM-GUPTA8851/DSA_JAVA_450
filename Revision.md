@@ -423,3 +423,31 @@ Reverse kar dena.
      */
 }
 ```
+
+# 13. Best time to buy and sell stock
+```java
+class Solution {
+    public int maxProfit(int[] prices) {
+        
+        int minPrice = Integer.MAX_VALUE;
+        int maxProfit = 0;
+
+        for (int price : prices) {
+
+            // Minimum buying price maintain karo
+            minPrice = Math.min(minPrice, price);
+
+            // Agar aaj sell kare to kitna profit hoga
+            maxProfit = Math.max(maxProfit, price - minPrice);
+        }
+/*
+ince we traverse the array from left to right,
+minPrice always represents the minimum stock
+price seen before or on the current day. 
+Therefore, whenever we compute price - minPrice,
+we are always buying first and selling later, satisfying the problem constraint automatically.
+*/
+        return maxProfit;
+    }
+}
+```
