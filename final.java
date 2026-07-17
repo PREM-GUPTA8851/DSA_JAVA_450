@@ -1861,7 +1861,6 @@ class Solution {
             left--;
             right++;
     }
-    
         }
         return s.substring(start, start + maxLength);
     }
