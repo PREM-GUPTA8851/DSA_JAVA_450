@@ -404,7 +404,6 @@ nums = [1,2,3,6,5,4]
     // after reverse --> [1,2,4,3,5,6]
     /*
     Current Array
-
 [1,2,4,6,5,3]
 
 Pivot ke baad ka part
