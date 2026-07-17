@@ -444,10 +444,10 @@ class Solution {
 ince we traverse the array from left to right,
 minPrice always represents the minimum stock
 price seen before or on the current day. 
-Therefore, whenever we compute price - minPrice,
+Therefore, whenever we compute price - minPrice
 we are always buying first and selling later, satisfying the problem constraint automatically.
 */
-        return maxProfit;
+    return maxProfit;
     }
 }
 ```
