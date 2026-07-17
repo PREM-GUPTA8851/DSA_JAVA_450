@@ -1631,7 +1631,7 @@ public static void main(String[] args)
 }
 }
 
-//==============================(String)=====================================
+//=======================================(String)===============================================
 
 // 1.You are given a string s , the task is to reverse the string using stack.
 
@@ -1749,5 +1749,75 @@ class Solution {
 
         String temp = s1 + s1;
         return temp.contains(s2);
+    }
+}
+
+// 5.Count and say
+class Solution {
+    public String countAndSay(int n) {
+        String ans = "1"; // Base case
+        // Generate sequence from 2 to n
+        // 2,3,4,5
+        for (int i = 2; i <= n; i++) {
+        // i = 2
+        // i = 3
+        // i = 4
+        // i = 5
+        StringBuilder temp = new StringBuilder();
+        int count = 1;
+        // ans --> 1 --> length = 1
+        // ans --> 11 --> length = 2
+        // ans --> 21 --> length = 2
+        // ans --> 1211 --> length = 4
+
+
+        // 2nd one --> 1 < 2 --> ..
+        // 3rd one --> 1 < 2-->...
+        // 4th one --> 1 < 4
+    for (int j = 1; j < ans.length(); j++) {
+        // 4th one --> 1 < 4
+        // 2 < 4
+        // 3 < 4
+        if(ans.charAt(j) == ans.charAt(j - 1)) {
+            count++; 
+            // 2
+        // count = 2
+        } else {
+                    temp.append(count); 
+                    // temp.append(1) --> temp --> 1
+                    // temp.append(1);
+                    // temp.append(1);
+                    temp.append(ans.charAt(j - 1)); 
+                    // temp.append(ans.charAt(0)) --> 
+                    // temp.append(2) --> temp --> 12
+                    // temp.append(1)
+                    // temp.append(2)
+
+                    /// temp --> 1112
+                    count = 1;
+                }
+            }
+
+            // Last group
+            temp.append(count);
+            // temp.append(1) --> temp --> 1
+            // temp.append(2) --> 2
+            // temp.append(1) --> 121
+            // temp.append(2)
+            temp.append(ans.charAt(ans.length() - 1));
+            // temp.append(ans.charAt(0)) --> temp.append(1)
+            // temp.append(ans.charAt(1)) --> temp.append(1)
+            // temp.append(1) --> temp --> 1211
+            // temp.append(1)
+
+            // temp--> 111211
+            ans = temp.toString();
+            // ans = "11"
+            // ans = "21"
+            // ans = "111211"
+
+        }
+
+        return ans;
     }
 }
