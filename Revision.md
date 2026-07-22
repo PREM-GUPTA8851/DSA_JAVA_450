@@ -540,3 +540,95 @@ class Solution {
     }
 }
 ```
+
+# 18.(b) Two sum -Pairs with 0 Sum
+```java
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+
+        // Test Case
+        // numbers = [2,7,11,15]
+        // target = 9
+
+        int i = 0;
+        int j = numbers.length - 1; // 3
+
+        while (i < j) {
+
+            // i = 0
+            // j = 3
+
+            // numbers[i] = 2
+            // numbers[j] = 15
+
+            int sum = numbers[i] + numbers[j]; // 2 + 15 = 17
+
+            // 17 > 9
+            // sum bada h isliye j--
+
+            if (sum == target) {
+                return new int[]{i + 1, j + 1};
+            }
+            else if (sum < target) {
+                i++;
+            }
+            else {
+                j--; // j = 2
+            }
+
+
+            // i = 0
+            // j = 2
+
+            // numbers[i] = 2
+            // numbers[j] = 11
+
+            sum = numbers[i] + numbers[j]; // 2 + 11 = 13
+
+            // 13 > 9
+            // fir bhi sum bada h
+            // j--
+
+            if (sum == target) {
+                return new int[]{i + 1, j + 1};
+            }
+            else if (sum < target) {
+                i++;
+            }
+            else {
+                j--; // j = 1
+            }
+
+
+            // i = 0
+            // j = 1
+
+            // numbers[i] = 2
+            // numbers[j] = 7
+
+            sum = numbers[i] + numbers[j]; // 2 + 7 = 9
+
+            // sum == target
+            // i + 1 = 1
+            // j + 1 = 2
+
+            if (sum == target) {
+                return new int[]{1,2};
+            }
+            else if (sum < target) {
+                i++;
+            }
+            else {
+                j--;
+            }
+        }
+
+        // is question me ye line kabhi execute nhi hogi
+        // kyuki question guarantee deta h ki
+        // exactly one solution hoga
+
+        return new int[]{};
+    }
+}
+
+```
