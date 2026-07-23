@@ -1891,3 +1891,103 @@ class Solution {
         return i == s.length();
     }
 }
+
+//10. Balanced Splits of a Binary String
+
+	
+class Solution {
+    public int balancedStringSplit(String s) {
+
+        // Dry Run
+        // Input : "RLRRLLRLRL"
+
+        int l = 0;
+        int r = 0;
+        int count = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+
+            // i = 0
+            // s.charAt(0) = 'R'
+            // r = 1
+            // l = 0
+            // l != r
+
+            // i = 1
+            // s.charAt(1) = 'L'
+            // l = 1
+            // r = 1
+            // l == r
+            // count = 1
+
+            // i = 2
+            // s.charAt(2) = 'R'
+            // r = 2
+            // l = 1
+            // l != r
+
+            // i = 3
+            // s.charAt(3) = 'R'
+            // r = 3
+            // l = 1
+            // l != r
+
+            // i = 4
+            // s.charAt(4) = 'L'
+            // l = 2
+            // r = 3
+            // l != r
+
+            // i = 5
+            // s.charAt(5) = 'L'
+            // l = 3
+            // r = 3
+            // l == r
+            // count = 2
+
+            // i = 6
+            // s.charAt(6) = 'R'
+            // r = 4
+            // l = 3
+            // l != r
+
+            // i = 7
+            // s.charAt(7) = 'L'
+            // l = 4
+            // r = 4
+            // l == r
+            // count = 3
+
+            // i = 8
+            // s.charAt(8) = 'R'
+            // r = 5
+            // l = 4
+            // l != r
+
+            // i = 9
+            // s.charAt(9) = 'L'
+            // l = 5
+            // r = 5
+            // l == r
+            // count = 4
+
+            if (s.charAt(i) == 'L')
+                l++;
+            else
+                r++;
+
+            if (l == r) {
+                count++;
+                // l = 0;
+                // r = 0;
+            }
+        }
+
+        // Final
+        // l = 5
+        // r = 5
+        // count = 4
+
+        return count;
+    }
+}
