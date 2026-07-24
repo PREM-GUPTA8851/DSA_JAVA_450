@@ -630,5 +630,38 @@ class Solution {
         return new int[]{};
     }
 }
+```
 
+# 19.Common in 3 sorted Arrays
+```java
+class Solution {
+    public ArrayList<Integer> commonElements(int[] a, int[] b, int[] c) {
+    ArrayList<Integer> ans = new ArrayList<>();
+    int i = 0; 
+    int j = 0;
+    int k = 0;
+    
+    while(i < a.length && j < b.length && k < c.length){
+        // skip duplicates
+        
+        // jb common elements mil jae tb
+        if(a[i] == b[j] && b[j]== c[k]){
+             ans.add(a[i]);
+            //  i++;
+            //  j++;
+            //  k++;
+         int val = a[i];
+
+                // skip duplicates in all arrays
+        while (i < a.length && a[i] == val) i++;
+        while (j < b.length && b[j] == val) j++;
+        while (k < c.length && c[k] == val) k++;
+        }
+        else if(a[i] < b[j]) i++;
+        else if(b[j] < c[k]) j++;
+        else k++;
+    }
+    return ans;
+    }
+}
 ```
