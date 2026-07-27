@@ -707,10 +707,67 @@ class Solution {
 }
 ```
 
+# 21.(a). Zero Sum Subarray 
+```java
+class Solution {
+    public boolean subArrayExists(int arr[]) {
 
+        HashSet<Integer> ans = new HashSet<>();
+        // Prefix Sum store karega.
+        // HashSet O(1) average time me search (contains) aur add kar deta hai.
 
+        int sum = 0;
 
+        for(int num : arr){
 
+            // arr = [4, 2, -3, 1, 6]
 
+            sum += num;
 
+            // num = 4
+            // sum = 4
+            //
+            // ans = {}
+            // contains(4) = false
+            //
+            // ans = {4}
+            
+            // num = 2
+            // sum = 6
+            //
+            // ans = {4}
+            // contains(6) = false
+            //
+            // ans = {4,6}
+            
+            // num = -3
+            // sum = 3
+            //
+            // ans = {4,6}
+            // contains(3) = false
+            //
+            // ans = {4,6,3}
+            
+            // num = 1
+            // sum = 4
+            //
+            // ans = {4,6,3}
+            // contains(4) = true
+            //
+            // Prefix Sum repeat ho gaya.
+            // Subarray [2,-3,1] ka sum = 0
+            //
+            // return true
+            // -------------------------
+
+            if(ans.contains(sum) || sum == 0)
+                return true;
+
+            ans.add(sum);
+        }
+
+        return false;
+    }
+}
+```
 
