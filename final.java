@@ -1893,8 +1893,6 @@ class Solution {
 }
 
 //10. Balanced Splits of a Binary String
-
-	
 class Solution {
     public int balancedStringSplit(String s) {
 
@@ -1989,5 +1987,140 @@ class Solution {
         // count = 4
 
         return count;
+    }
+}
+
+// 13. Next Permutations
+class Solution {
+    void nextPermutation(int[] arr) {
+
+        // Dry Run
+        // Input : [1, 3, 2]
+
+        int n = arr.length;
+        int pivot = -1;
+
+        // Pivot Find
+        for(int i = n - 2; i >= 0; i--){
+
+            // i = 1
+            // 3 < 2  -> No
+
+            // i = 0
+            // 1 < 3  -> Yes
+            // pivot = 0
+
+            if(arr[i] < arr[i + 1]){
+                pivot = i;
+                break;
+            }
+        }
+
+        // pivot = 0
+
+        if(pivot == -1){
+            reverse(arr,0,n-1);
+            return;
+        }
+
+        // Next Greater Element
+        for(int i = n - 1; i > pivot; i--){
+
+            // i = 2
+            // arr[2] = 2
+            // arr[pivot] = 1
+            // 2 > 1
+
+            // Swap
+            // [2,3,1]
+
+            if(arr[i] > arr[pivot]){
+                swap(arr,i,pivot);
+                break;
+            }
+        }
+
+        // Reverse pivot+1 to end
+
+        // Before Reverse
+        // [2,3,1]
+
+        // Reverse (1...2)
+
+        // After Reverse
+        // [2,1,3]
+
+        reverse(arr,pivot+1,n-1);
+    }
+
+    void swap(int[] arr,int i,int j){
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+
+    void reverse(int[] arr,int start,int end){
+        while(start < end){
+            swap(arr,start,end);
+            start++;
+            end--;
+        }
+    }
+}
+
+14. Valid Parenthesis String
+	class Solution {
+    public boolean checkValidString(String s) {
+        // Dry Run
+        // Input : "(*))"
+        // input: "()"
+        // Input : "(*)"
+
+        // low = Minimum possible open brackets
+        // high = Maximum possible open brackets
+
+        int low = 0;
+        int high = 0;
+
+        for(int i = 0; i < s.length(); i++){
+
+            char ch = s.charAt(i);
+// ch = s.charAt(0) --> "("
+// ch = s.charAt(1)--> ")"
+
+// ch = s.charAt(0) --> "("
+// ch = s.charAt(1) --> "*"
+// ch = s.charAt(2)--> ")"
+            if(ch == '('){
+                low++;
+                // 1
+                // 1
+                high++;
+                // 1
+                // 1
+            }
+            else if(ch == ')'){
+                low--;
+                // 0
+                // -1
+                high--;
+                // 0
+                // 1
+            }
+            else{ // '*'
+                low--;      // '*' as ')'
+                // 0
+                high++;     // '*' as '('
+                // 2
+            }
+
+            if(low < 0)
+                low = 0;
+
+            if(high < 0)
+                return false;
+        }
+
+        return low == 0;
     }
 }
