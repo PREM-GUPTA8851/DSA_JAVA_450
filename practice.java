@@ -30,7 +30,7 @@ class Solution {
             target >= nums[low] && target < nums[mid]
             0 >= 4  -> false
 
-            low = mid + 1
+            low = mid + 1.
             low = 4
             */
 
