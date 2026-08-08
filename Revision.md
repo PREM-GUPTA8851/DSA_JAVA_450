@@ -1,6 +1,7 @@
 # 1.Wap to reverse an array
 
 ```java
+
 class Solution {
     public void reverseArray(int arr[]) {
         int left = 0;
@@ -906,6 +907,7 @@ class Solution {
 
 # b). Factorial Trailing Zeroes(LC)
 ```java
+
 class Solution {
     public int trailingZeroes(int n) {
     // Instead of calculating factorial,
