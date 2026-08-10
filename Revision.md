@@ -1,4 +1,4 @@
-# 1.Wap to reverse an array
+<img width="833" height="786" alt="image" src="https://github.com/user-attachments/assets/4d3487e2-b01a-40a3-8578-e07cc3be78ba" /># 1.Wap to reverse an array
 
 ```java
 
@@ -947,5 +947,44 @@ class Solution {
 }
 ```
 
+# 23. Maximum Product Subarray
+```java
+class Solution {
+	int maxProduct(int[] arr) {
+	     
+        /*
+        We maintain minProduct as well because multiplying a 
+        negative number with the minimum product can produce the 
+        maximum product.
+        */
+        int maxProd = arr[0] ;// -2
+        int minProd = arr[0]; // -2
+        int ans = arr[0]; // -2
+        
+        for(int i = 1; i < arr.length; i++){
+            // if arr[i] current element is -ve so we swap 
+            // 1 --> 6
+            // 2--> -3 --> swap maxProd = -12
+            if(arr[i] < 0){
+                int temp = maxProd;
+                maxProd = minProd;
+                minProd = temp;
+            }
+            
+            maxProd = Math.max(arr[i], maxProd * arr[i]); 
+            // 6, -12 --> 6
+            minProd = Math.min(arr[i], minProd * arr[i]); 
+            // 6, -12 --> -12
+            
+            ans = Math.max(ans, maxProd);
+            // 6
+        }
+        
+        return ans;
+		
+	}
+}
+
+```
 
 
