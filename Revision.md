@@ -1,4 +1,3 @@
-<img width="833" height="786" alt="image" src="https://github.com/user-attachments/assets/4d3487e2-b01a-40a3-8578-e07cc3be78ba" /># 1.Wap to reverse an array
 
 ```java
 
