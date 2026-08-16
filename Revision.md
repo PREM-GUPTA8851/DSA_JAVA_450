@@ -232,7 +232,7 @@ class Solution {
 }
 ```
 
-# 10. Merge Sorted Array
+# 10)a. Merge Sorted Array
 ```java
 class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
@@ -289,9 +289,11 @@ class Solution {
         }
     }
 }
+```
 
 
-Merge without extra space
+# b.Merge without extra space
+```java
 class Solution {
     public void mergeArrays(int a[], int b[]) {
         // code here
