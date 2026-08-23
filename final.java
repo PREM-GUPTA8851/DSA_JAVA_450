@@ -2665,3 +2665,71 @@ class Solution {
         // count = 2
     }
 }
+
+// 14. Merge Without Extra Space
+
+// Input: a[] = [2, 4, 7, 10], b[] = [2, 3]
+// Output: a[] = [2, 2, 3, 4], b[] = [7, 10]
+// Explanation: After merging the two non-decreasing arrays, we get, [2, 2, 3, 4, 7, 10]
+// Input: a[] = [1, 5, 9, 10, 15, 20], b[] = [2, 3, 8, 13]
+// Output: a[] = [1, 2, 3, 5, 8, 9], b[] = [10, 13, 15, 20]
+// Explanation: After merging two sorted arrays we get [1, 2, 3, 5, 8, 9, 10, 13, 15, 20].
+// Input: a[] = [0, 1], b[] = [2, 3]
+// Output: a[] = [0, 1], b[] = [2, 3]
+// Explanation: After merging two sorted arrays we get [0, 1, 2, 3]
+
+class Solution {
+    public void mergeArrays(int a[], int b[]) {
+
+        // a = [1,5,9]
+        // b = [2,3,7]
+
+        // logic is we are taking two pointer's
+        int i, j;
+
+        // one is pointing towards one array last
+        i = a.length - 1;
+        // i = 2 → a[2] = 9
+
+        // one is pointing towards second array first
+        j = 0;
+        // j = 0 → b[0] = 2
+
+        while (i >= 0 && j < b.length) {
+
+            if (a[i] > b[j]) {
+
+                int temp = a[i];
+                a[i] = b[j];
+                b[j] = temp;
+
+                // 9 > 2 → swap
+                // a = [1,5,2]
+                // b = [9,3,7]
+
+                // i = 1 → 5
+                // j = 1 → 3
+                // 5 > 3 → swap
+                // a = [1,3,2]
+                // b = [9,5,7]
+
+                // i = 0 → 2
+                // j = 2 → 7
+                // 2 > 7 → false
+            }
+
+            i--;
+            j++;
+
+            // i = 1, j = 1
+            // i = 0, j = 2
+            // i = -1, j = 3 → loop stop
+        }
+
+        Arrays.sort(a);
+        // a = [1,2,3]
+
+        Arrays.sort(b);
+        // b = [5,7,9]
+    }
+}
