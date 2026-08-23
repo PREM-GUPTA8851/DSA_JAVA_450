@@ -2403,3 +2403,27 @@ class Solution {
         return -1;
     }
 }
+
+// 4.Count Perfect Squares
+class Solution {
+    static int countSquares(int n) {
+
+        int count = 0;
+        // n = 10
+        // count = 0
+
+        for (int i = 1; i * i < n; i++) {
+            // i = 1 → 1*1 = 1 < 10 → count = 0
+
+            count++;
+            // i = 1 → count = 1
+            // i = 2 → 2*2 = 4 < 10 → count = 2
+            // i = 3 → 3*3 = 9 < 10 → count = 3
+            // i = 4 → 4*4 = 16 < 10 false → loop stop
+        }
+
+        return count;
+        // count = 3
+        // perfect squares = 1, 4, 9
+    }
+}
