@@ -2492,7 +2492,7 @@ class Solution {
     }
 }
 
-// 7.Majority Element 
+// 8.Majority Element 
 class Solution {
     int majorityElement(int nums[]) {
 
@@ -2586,5 +2586,82 @@ class Solution {
 
         return new int[]{repeated, missing};
         // [2,4]
+    }
+}
+
+// 13. Triplet With Smaller Sum (gfg)
+/*
+Input: sum = 2, arr[] = [-2, 0, 1, 3]
+Output:  2
+Explanation: Triplets with sum less than 2 are (-2, 0, 1) and (-2, 0, 3). 
+Input: sum = 12, arr[] = [5, 1, 3, 4, 7]
+Output: 4
+Explanation: Triplets with sum less than 12 are (1, 3, 4), (5, 1, 3), (1, 3, 7) and (5, 1, 4).
+*/
+
+class Solution {
+    int countTriplets(int sum, int arr[]) {
+    // sum = 2;
+    // arr = [ -2, 0, 1 ,3]
+
+    
+    // sum = 12 
+    // arr = [5,1,3,4,7]
+    Arrays.sort(arr);
+    // arr = [-2, 0, 1, 3]
+    
+    // after sorting --> [1,3,4,5,7]
+    
+    int count = 0;
+    // count = 0;
+
+    for (int i = 0; i < arr.length - 2; i++) {
+    // i = 0
+            int left = i + 1;
+            // left = 1
+            int right = arr.length - 1;
+            // right = 4
+        
+            while (left < right) {
+        // 1 < 3
+        // 2 < 3
+        
+        // 1 < 4
+        // 2 < 4
+        // 1 + 3 + 7 = 11 < 12 --> h 
+        // 1 + 4 + 7 = 12 < 12 --> nope --> 
+        // 1 + 4 + 5 = 10 < 12 --> h --> 
+        
+    
+        if (arr[i] + arr[left] + arr[right] < sum) {
+        // -2 + 0 + 3 = 1 < 2
+        // -2 + 1 + 3 = 2 < 2 (false)
+        
+            count += right - left;
+            
+            // kyunki array sorted hai
+            // agar arr[i] + arr[left] + arr[right] < sum hai
+            // to arr[right] se chhote saare elements bhi valid honge
+            //
+        // count = 0 + (3 - 1) = 2 
+        
+        // count += 3 
+        // count = 3 + 3-2 = 4 
+                    left++;
+        // left = 2
+        
+        // left = 2
+                } else {
+                    right--;
+                    // 2
+                    // 3
+                }
+        
+            // 2 < 2 (left < right)
+            }
+        }
+
+        return count;
+        // count = 2
     }
 }
