@@ -2439,3 +2439,55 @@ class Solution {
         return c;
     }
 }
+
+// 6. Missing And Repeating
+class Solution {
+    ArrayList<Integer> findTwoElement(int arr[]) {
+
+        // arr = [1,3,3]
+        // duplicate = 3
+        // missing = 2
+
+        ArrayList<Integer> ans = new ArrayList<>();
+        // ans = []
+
+        for (int i = 0; i < arr.length; i++) {
+
+            int index = Math.abs(arr[i]) - 1;
+            // i = 0 → arr[0] = 1 → index = 0
+            // i = 1 → arr[1] = 3 → index = 2
+            // i = 2 → arr[2] = 3 → index = 2
+
+            if (arr[index] < 0) {
+                ans.add(Math.abs(arr[i]));
+                // i = 2 → arr[2] = -3
+                // already negative → duplicate = 3
+                // ans = [3]
+
+            } else {
+                arr[index] *= -1;
+                // i = 0 → arr[0] = -1
+                // arr = [-1,3,3]
+
+                // i = 1 → arr[2] = -3
+                // arr = [-1,3,-3]
+            }
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+
+            if (arr[i] > 0) {
+                ans.add(i + 1);
+                // i = 0 → -1 → skip
+                // i = 1 → 3 > 0 → missing = 2
+                // ans = [3,2]
+                // i = 2 → -3 → skip
+            }
+        }
+
+        return ans;
+        // [3,2]
+        // first = duplicate
+        // second = missing
+    }
+}
