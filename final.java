@@ -2256,42 +2256,150 @@ class Solution {
     }
 }
 
-
 // 3. Search in Rotated Sorted Array
 class Solution {
     public int search(int[] nums, int target) {
-        // [4,5,6,7,0,1,2] 
-        // pehle pivot find kr lo then 
+
+        // nums = [4,5,6,7,0,1,2]
+        // target = 0
+
+
+        // pehle pivot find kr lo
         int pivot = -1;
-        for(int i = nums.length - 1; i > 0 ; i--){
-            if(nums[i - 1] > nums[i]) pivot = i -1;
+
+        for (int i = nums.length - 1; i > 0; i--) {
+
+            // i = 6
+            // nums[5] > nums[6]
+            // 1 > 2 false
+
+            // i = 5
+            // nums[4] > nums[5]
+            // 0 > 1 false
+
+            // i = 4
+            // nums[3] > nums[4]
+            // 7 > 0 true
+            // pivot = 3
+
+            // break bhi laga sakte ho yaha
+            // kyunki pivot mil gaya hai
+            if (nums[i - 1] > nums[i]) {
+                pivot = i - 1;
+            }
         }
-        // binary search 2 part m lgao pehle starting se pivot index tk 
+
+        // pivot = 3
+
+        /*
+        Array:
+
+        [4,5,6,7 | 0,1,2]
+                 ↑
+               pivot
+
+        Part 1 = [4,5,6,7]
+        Part 2 = [0,1,2]
+        */
+
+
+        // pehle starting se pivot index tk
         int ansl = BS(nums, 0, pivot, target);
-        // then pivot index se array k last index tk 
-        int ansr = BS(nums, pivot + 1, nums.length -1, target);
-        if(ansl != -1) return ansl;
-        else if(ansr != -1) return ansr;
+
+        // BS(nums, 0, 3, 0)
+
+        /*
+        start = 0
+        end = 3
+
+        mid = 1
+        nums[1] = 5
+
+        5 < 0 false
+
+        end = mid - 1
+        end = 0
+
+
+        mid = 0
+        nums[0] = 4
+
+        4 < 0 false
+
+        end = -1
+
+        return -1
+
+        ansl = -1
+        */
+
+
+        // pivot ke baad se last tk
+        int ansr = BS(nums, pivot + 1, nums.length - 1, target);
+
+        // BS(nums, 4, 6, 0)
+
+        /*
+        start = 4
+        end = 6
+
+        mid = 5
+        nums[5] = 1
+
+        1 < 0 false
+
+        end = 4
+
+
+        mid = 4
+        nums[4] = 0
+
+        nums[mid] == target
+
+        0 == 0
+
+        return 4
+
+        ansr = 4
+        */
+
+
+        if (ansl != -1)
+            return ansl;
+
+        else if (ansr != -1)
+            return ansr;
+            // ansr = 4
+            // return 4
 
         return -1;
     }
 
-    int BS(int[] nums, int start, int end, int target){
-        while(start <= end){
-            int mid = start + (end - start)/2;
-            if(nums[mid] == target){
+
+    int BS(int[] nums, int start, int end, int target) {
+
+        while (start <= end) {
+
+            int mid = start + (end - start) / 2;
+
+            if (nums[mid] == target) {
                 return mid;
             }
-            else if(nums[mid] < target) {
-                // right jao 
+
+            else if (nums[mid] < target) {
+
+                // target right side me hai
                 start = mid + 1;
+
             }
+
             else {
+
+                // target left side me hai
                 end = mid - 1;
             }
         }
+
         return -1;
     }
 }
-
-
