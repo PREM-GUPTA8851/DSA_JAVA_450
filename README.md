@@ -140,6 +140,7 @@ Complete the entire **Love Babbar 450 DSA Sheet** while maintaining high-quality
 # 🤝 Contributions
 
 - Prem Kumar Gupta — Full_Stack Developer
+- Sakshi Kumari - FUll_Stack Developer
 - Sakshi Kumari - Full_Stack Developer
 
 This repository is primarily maintained for my learning journey.
@@ -148,7 +149,7 @@ If you find any better approach or optimization, feel free to open an Issue or P
 
 ---
 
-# ⭐ Support
+# ⭐ Support_
 
 If this repository helps you, consider giving it a ⭐ on GitHub.
 
