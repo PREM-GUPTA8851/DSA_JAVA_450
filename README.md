@@ -148,7 +148,7 @@ If you find any better approach or optimization, feel free to open an Issue or P
 
 ---
 
-# ⭐ Support
+# ⭐ Support_
 
 If this repository helps you, consider giving it a ⭐ on GitHub.
 
