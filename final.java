@@ -2816,3 +2816,164 @@ class Solution {
         return -1;
     }
 }
+
+
+// ======================================(Graph) ===============================
+// 1. BFS of a Graph 
+// implementation of a graph by taking nodes 
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        // User koi bhi node values de sakta hai
+        int[][] edges = {
+            {10, 20},
+            {10, 30},
+            {10, 40},
+            {20, 50}
+        };
+
+        int start = 10;
+
+        // Adjacency list: node value -> neighbours
+HashMap<Integer, ArrayList<Integer>> adj = new HashMap<>();
+
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+
+            // Dono nodes ki lists ensure karo
+            adj.putIfAbsent(u, new ArrayList<>());
+            adj.putIfAbsent(v, new ArrayList<>());
+
+            // Undirected graph: dono directions
+            adj.get(u).add(v);
+            adj.get(v).add(u);
+
+            /*
+             Edge [10, 20]:
+             10 -> [20]
+             20 -> [10]
+
+             Edge [10, 30]:
+             10 -> [20, 30]
+             30 -> [10]
+
+             Edge [10, 40]:
+             10 -> [20, 30, 40]
+             40 -> [10]
+
+             Edge [20, 50]:
+             20 -> [10, 50]
+             50 -> [20]
+
+             Final graph:
+                 30
+                 |
+             20--10--40
+             |
+             50
+
+             Adjacency list:
+             10 -> [20, 30, 40]
+             20 -> [10, 50]
+             30 -> [10]
+             40 -> [10]
+             50 -> [20]
+            */
+        }
+
+        ArrayList<Integer> result = bfs(adj, start);
+        System.out.println("BFS: " + result);
+    }
+
+    static ArrayList<Integer> bfs(
+            HashMap<Integer, ArrayList<Integer>> adj,
+            int start) {
+
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        // Values direct store karne ke liye
+        HashSet<Integer> visited = new HashSet<>();
+        Queue<Integer> q = new LinkedList<>();
+
+        visited.add(start);
+        q.offer(start);
+
+        /*
+         Initially:
+         ans = []
+         visited = [10]
+         q = [10]
+        */
+
+        while (!q.isEmpty()) {
+
+            int node = q.poll();
+            ans.add(node);
+
+            /*
+             Iteration 1:
+             node = 10
+             ans = [10]
+             q = []
+
+             Neighbours = [20, 30, 40]
+
+             Visit 20 -> q = [20]
+             Visit 30 -> q = [20, 30]
+             Visit 40 -> q = [20, 30, 40]
+
+             visited = [10, 20, 30, 40]
+            */
+
+            for (int neighbor : adj.get(node)) {
+                if (!visited.contains(neighbor)) {
+                    visited.add(neighbor);
+                    q.offer(neighbor);
+                }
+            }
+
+            /*
+             Iteration 2:
+             node = 20
+             ans = [10, 20]
+             q = [30, 40]
+
+             Neighbours = [10, 50]
+             10 visited -> skip
+             50 unvisited -> add to queue
+
+             q = [30, 40, 50]
+             visited = [10, 20, 30, 40, 50]
+
+
+             Iteration 3:
+             node = 30
+             ans = [10, 20, 30]
+             q = [40, 50]
+             Neighbour 10 already visited -> skip
+
+
+             Iteration 4:
+             node = 40
+             ans = [10, 20, 30, 40]
+             q = [50]
+             Neighbour 10 already visited -> skip
+
+
+             Iteration 5:
+             node = 50
+             ans = [10, 20, 30, 40, 50]
+             q = []
+             Neighbour 20 already visited -> skip
+
+             Queue empty -> BFS complete.
+            */
+        }
+
+        return ans;
+    }
+}
