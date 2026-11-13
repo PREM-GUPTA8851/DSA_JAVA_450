@@ -1534,7 +1534,7 @@ class Solution {
 
 # -------------------(String)-------------------------
 
-# 9.Rabin Karp 
+# 9.Rabin Karp Algorithm
 ```java
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
