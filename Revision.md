@@ -1688,8 +1688,8 @@ class Solution {
 
 ```
 
-------------------------(Greedy)-----------------------------
-#. Fractional knapsack
+# ------------------------(Greedy)-----------------------------
+# . Fractional knapsack
 
 ```java
 Input: val[] = [60, 100, 120], wt[] = [10, 20, 30], capacity = 50
